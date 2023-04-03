@@ -59,7 +59,7 @@ const Home: NextPage = () => {
           <div className=" flex w-full items-center justify-start border-white px-1 pb-2">
             <Image
               src={gradPic}
-              alt="bio degree lol"
+              alt="grad pic"
               className="h-12 w-auto rounded-full"
             />
             <div className="items-left flex flex-col pl-3">
@@ -136,7 +136,6 @@ const Home: NextPage = () => {
           </div>
         )}
         {user.isSignedIn && <SignOutButton />}
-
         <div>
           {data?.map((comment) => (
             <div key={comment.authorId}>{comment.content}</div>
