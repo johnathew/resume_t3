@@ -54,7 +54,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </header>
-      <main className={`flex h-full w-full flex-col text-black items-center ${darkMode ? "dark" : ""} `}>
+      <main className={`flex h-screen w-full flex-col text-black items-center ${darkMode ? "dark" : ""} `}>
         <div className="flex dark:text-slate-200 dark:bg-slate-950 bg-slate-300  w-full flex-col border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 px-5 py-6 md:w-3/4">
           <div className=" flex w-full items-center justify-start border-white px-1 pb-2">
             <Image
@@ -127,8 +127,7 @@ const Home: NextPage = () => {
               </li>
             </ul>
           </div>
-        </section>
-        {!user.isSignedIn && (
+          {!user.isSignedIn && (
           <div className="m-2 rounded-md border-2 bg-slate-400 p-2 font-medium text-black">
             <SignInButton>
               Sign in with Github and leave a comment below
@@ -141,6 +140,8 @@ const Home: NextPage = () => {
             <div key={comment.authorId}>{comment.content}</div>
           ))}
         </div>
+        </section>
+   
       </main>
     </>
   );
