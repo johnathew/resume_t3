@@ -54,8 +54,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </header>
-      <main className={`flex h-screen w-full flex-col text-black items-center ${darkMode ? "dark" : ""} `}>
-        <div className="flex dark:text-slate-200 dark:bg-black bg-slate-300  w-full flex-col border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 px-5 py-6 md:w-3/4">
+      <main className={`flex h-full w-full flex-col text-black items-center ${darkMode ? "dark" : ""} `}>
+        <div className="flex dark:text-slate-200 dark:bg-slate-950 bg-slate-300  w-full flex-col border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 px-5 py-6 md:w-3/4">
           <div className=" flex w-full items-center justify-start border-white px-1 pb-2">
             <Image
               src={gradPic}
@@ -89,8 +89,8 @@ const Home: NextPage = () => {
             </h2>
           </div>
         </div>
-        <section className="flex w-full flex-col bg-slate-300 dark:bg-black justify-between border-x-4 border-b-2 border-x-slate-50  border-b-slate-200 px-5 py-6 md:w-3/4">
-          <div className="justify-center py-2 bg-slate-300 text-black dark:text-slate-200 dark:bg-black ">
+        <section className="flex w-full flex-col bg-slate-300 dark:bg-slate-950 justify-between border-x-4 border-b-2 border-x-slate-50  border-b-slate-200 px-5 py-6 md:w-3/4">
+          <div className="justify-center py-2 bg-slate-300 text-black dark:text-slate-200 dark:bg-slate-950">
             <h2 className="text-2xl font-bold underline">EDUCATION</h2>
             <div className="w-1/2 justify-between rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
               <p className="font-semibold">Bachelor of Science in Biology</p>
