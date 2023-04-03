@@ -5,8 +5,8 @@ import Head from "next/head";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
-
+  // never want user to connect directly to a DB
+  const {data} = api.comments.getAll.useQuery()
   const user = useUser()
 
   return (
@@ -20,6 +20,9 @@ const Home: NextPage = () => {
         Hello
       {!user.isSignedIn && <SignInButton />}
       {user.isSignedIn && <SignOutButton />}
+      <div>
+        {data?.map((comment) => (<div key={comment.authorId}> {comment.content}</div>))}
+      </div>
       </main>
     </>
   );
