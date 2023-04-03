@@ -77,13 +77,13 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="flex w-3/4 items-end p-1 pt-2">
-            <CiLocationOn className="text-2xl text-yellow-200" />
+            <CiLocationOn className="text-2xl dark:text-yellow-200" />
             <h2 className="text-md pl-0.5 font-normal tracking-wide">
               McAllen, TX
             </h2>
           </div>
           <div className="flex w-3/4 items-center pl-2">
-            <HiOutlineMail className="text-lg text-yellow-200" />
+            <HiOutlineMail className="text-lg dark:text-yellow-200" />
             <h2 className="text-md pl-1 font-light tracking-wide">
               Jakornegay01@gmail.com
             </h2>
