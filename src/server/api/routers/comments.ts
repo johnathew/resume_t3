@@ -28,9 +28,14 @@ take: 100,})
         if(!author || !author.username) {
             throw new TRPCError({code: "INTERNAL_SERVER_ERROR", message: "Author for post not found"})
         }
+        console.log(author.username)
+
         return {
         comment,
-        author
+        author: {
+            ...author,
+            username: author.username
+        }
     }
     })
   }),
