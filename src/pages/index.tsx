@@ -49,7 +49,7 @@ const CommentsView = (props: CommentWithUser) => {
     >
       <Image
         src={author.profileImageUrl}
-        alt={`${author?.username}'s profile pic`}
+        alt={`${author.username}'s profile pic`}
         className="w-14 rounded-md border-2 border-black drop-shadow-lg"
         width={56}
         height={56}
