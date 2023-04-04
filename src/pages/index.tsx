@@ -6,26 +6,79 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
 import { CiLinkedin, CiLocationOn } from "react-icons/ci";
 import { IoIosSunny } from "react-icons/io";
-
 import { HiOutlineMail } from "react-icons/hi";
 import { BsSun } from "react-icons/bs";
 import Image from "next/image";
 import gradPic from "public/gradPic.jpeg";
-import { api } from "~/utils/api";
+import { api, RouterOutputs } from "~/utils/api";
 import { useState } from "react";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime"
+dayjs.extend(relativeTime)
+
+const AddCommentWizard = () => {
+  const { user } = useUser();
+  if (!user) return null;
+
+  return (
+    <div className="flex h-auto w-1/2 gap-1">
+      <Image
+        src={user.profileImageUrl}
+        className="w-14 rounded-md border-2 border-black drop-shadow-lg"
+        alt="Profile Image URL"
+        width={56}
+        height={56}
+      />
+      <input
+        placeholder="Leave a comment"
+        className="w-3/4 bg-transparent p-1 outline-none dark:text-white"
+      />
+    </div>
+  );
+};
+
+type CommentWithUser = RouterOutputs["comments"]["getAll"][number];
+const CommentsView = (props: CommentWithUser) => {
+  const { comment, author } = props;
+  return (
+    <div
+      key={comment.authorId}
+      className="mt-4 flex h-full items-center gap-1 border-4 border-slate-400 dark:text-white"
+    >
+      <Image
+        src={author.profileImageUrl}
+        alt={`${author.username}'s profile pic`}
+        className="w-14 rounded-md border-2 border-black drop-shadow-lg"
+        width={56}
+        height={56}
+      />
+      <div className="flex flex-col">
+        <div className="flex text-slate-950 underline-offset-3 dark:text-white">
+          <span>User: {author.username}</span><span>{`・${dayjs(comment.createdAt).fromNow()}`}</span>
+        </div>
+        {comment.content}
+      </div>
+    </div>
+  );
+};
 
 const Home: NextPage = () => {
-  const { data } = api.comments.getAll.useQuery();
   const [darkMode, setDarkMode] = useState(true);
-  const user = useUser();
+  const { data, isLoading } = api.comments.getAll.useQuery();
 
+  if (isLoading) return <div>Loading...</div>;
+  if (!data) return <div>Something went wrong.</div>;
+
+  const user = useUser();
+  console.log(user);
   return (
     <>
       <Head>
         <title>Resume</title>
       </Head>
       <header
-        className={`flex w-full justify-center ${darkMode ? "dark" : ""}`}>
+        className={`flex w-full justify-center ${darkMode ? "dark" : ""}`}
+      >
         <div className="m-0 flex w-full items-center justify-between border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-200 p-2 text-slate-800 md:w-3/4 md:text-lg">
           <Link href="/">
             <div className="flex justify-start space-x-2">
@@ -54,8 +107,12 @@ const Home: NextPage = () => {
           </div>
         </div>
       </header>
-      <main className={`flex h-full w-full flex-col text-black items-center ${darkMode ? "dark" : ""} `}>
-        <div className="flex dark:text-slate-200 dark:bg-slate-950 bg-slate-300  w-full flex-col border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 px-5 py-6 md:w-3/4">
+      <main
+        className={`flex h-full w-full flex-col items-center text-black ${
+          darkMode ? "dark" : ""
+        } `}
+      >
+        <div className="flex w-full flex-col border-x-4  border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-300 px-5 py-6 dark:bg-slate-950 dark:text-slate-200 md:w-3/4">
           <div className=" flex w-full items-center justify-start border-white px-1 pb-2">
             <Image
               src={gradPic}
@@ -69,7 +126,7 @@ const Home: NextPage = () => {
               <h2 className="text-sm font-light">Frontend Developer</h2>
             </div>
           </div>
-          <div className="w-full justify-end border-b-2 py-2">
+          <div className="w-full justify-end border-b-2 border-black py-2 dark:border-slate-200">
             <p>
               A self-taught and highly motivated individual seeking to gain
               experience as a front-end developer through an internship
@@ -89,8 +146,8 @@ const Home: NextPage = () => {
             </h2>
           </div>
         </div>
-        <section className="flex w-full flex-col bg-slate-300 dark:bg-slate-950 justify-between border-x-4 border-b-2 border-x-slate-50  border-b-slate-200 px-5 py-6 md:w-3/4">
-          <div className="justify-center py-2 bg-slate-300 text-black dark:text-slate-200 dark:bg-slate-950">
+        <section className="flex w-full flex-col justify-between border-x-4 border-b-2 border-x-slate-50 border-b-slate-200 bg-slate-300  px-5 py-6 dark:bg-slate-950 md:w-3/4">
+          <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
             <h2 className="text-2xl font-bold underline">EDUCATION</h2>
             <div className="w-1/2 justify-between rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
               <p className="font-semibold">Bachelor of Science in Biology</p>
@@ -128,20 +185,24 @@ const Home: NextPage = () => {
             </ul>
           </div>
           {!user.isSignedIn && (
-          <div className="m-2 rounded-md border-2 bg-slate-400 p-2 font-medium text-black">
-            <SignInButton>
-              Sign in with Github and leave a comment below
-            </SignInButton>
+            <div className="m-2 rounded-md border-2 bg-slate-400 p-2 font-medium text-black">
+              <SignInButton>Sign in</SignInButton>
+            </div>
+          )}
+          {user.isSignedIn && (
+            <>
+              <AddCommentWizard />
+              <div className="w-1/2 dark:bg-slate-400 dark:text-white">
+                <SignOutButton />
+              </div>
+            </>
+          )}
+          <div>
+            {data?.map((fullComment) => (
+              <CommentsView {...fullComment} key={fullComment.comment.id} />
+            ))}
           </div>
-        )}
-        {user.isSignedIn && <SignOutButton />}
-        <div>
-          {data?.map((comment) => (
-            <div key={comment.authorId}>{comment.content}</div>
-          ))}
-        </div>
         </section>
-   
       </main>
     </>
   );
