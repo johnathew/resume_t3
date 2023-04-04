@@ -10,10 +10,12 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsSun } from "react-icons/bs";
 import Image from "next/image";
 import gradPic from "public/gradPic.jpeg";
-import { api, RouterOutputs } from "~/utils/api";
+import { api } from "~/utils/api";
+import type {RouterOutputs} from "~/utils/api"
 import { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime"
+import { LoadingPage } from "~/components/loading";
 dayjs.extend(relativeTime)
 
 const AddCommentWizard = () => {
@@ -66,7 +68,7 @@ const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(true);
   const { data, isLoading } = api.comments.getAll.useQuery();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingPage />
   if (!data) return <div>Something went wrong.</div>;
 
   const user = useUser();
