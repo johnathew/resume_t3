@@ -49,7 +49,7 @@ const CommentsView = (props: CommentWithUser) => {
     >
       <Image
         src={author.profileImageUrl}
-        alt={`${author.username}'s profile pic`}
+        alt={`${author?.username}'s profile pic`}
         className="w-14 rounded-md border-2 border-black drop-shadow-lg"
         width={56}
         height={56}
@@ -67,11 +67,12 @@ const CommentsView = (props: CommentWithUser) => {
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(true);
   const { data, isLoading } = api.comments.getAll.useQuery();
+  const user = useUser();
 
   if (isLoading) return <LoadingPage />
   if (!data) return <div>Something went wrong.</div>;
 
-  const user = useUser();
+
   console.log(user);
   return (
     <>
