@@ -16,7 +16,7 @@ import { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { LoadingPage } from "~/components/loading";
-import Tabs from "~/components/tabs";
+import Tabs from "~/components/Tabs";
 dayjs.extend(relativeTime);
 
 // TODO: add job history section
