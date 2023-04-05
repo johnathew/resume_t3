@@ -16,11 +16,17 @@ import { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { LoadingPage } from "~/components/loading";
+import Tabs from "~/components/tabs";
 dayjs.extend(relativeTime);
 
 // TODO: add job history section
 const AddCommentWizard = () => {
   const { user } = useUser();
+  const [input, setInput] = useState('')
+  const {mutate, isLoading: isPosting} = api.comments.create.useMutation(
+
+  )
+
   if (!user) return null;
 
   return (
@@ -34,8 +40,13 @@ const AddCommentWizard = () => {
       />
       <input
         placeholder="Leave a comment"
+        type="text"
         className="w-3/4 bg-transparent p-1 outline-none dark:text-white"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        disabled={isPosting}
       />
+      <button onClick={() => mutate({content: input})}>Post</button>
     </div>
   );
 };
@@ -72,7 +83,7 @@ const CommentFeed = () => {
   if (!data) return <div>Error</div>;
   return (
     <div>
-      {data?.map((fullComment) => (
+      {data.map((fullComment) => (
         <CommentsView {...fullComment} key={fullComment.comment.id} />
       ))}
     </div>
@@ -162,14 +173,15 @@ const Home: NextPage = () => {
           </div>
         </div>
         <section className="flex w-full flex-col justify-between border-x-4 border-b-2 border-x-slate-50 border-b-slate-200 bg-slate-300  px-5 py-6 dark:bg-slate-950 md:w-3/4">
-          <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
+          <Tabs panels={[
+            {name: 'About me', content: <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
             <h2 className="text-2xl font-bold underline">EDUCATION</h2>
             <div className="w-1/2 justify-between rounded-lg p-1 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
               <p className="font-semibold">・Bachelor of Science in Biology</p>
               <p className="pl-4">Graduation: 2016</p>
             </div>
             <p className="w-3/4 break-normal rounded-lg p-1 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-              ・Texes A&M Univeristy - College Station, TX
+              ・Texes A&M University - College Station, TX
             </p>
             <h2 className="text-2xl font-bold underline">Languages</h2>
             <ul>
@@ -198,7 +210,10 @@ const Home: NextPage = () => {
                 ・Adobe Photoshop
               </li>
             </ul>
-          </div>
+          </div> },
+          {name: 'Job history', content: <div>Prev Jobs go here</div>}
+          ]}/>
+          
           {!isSignedIn && (
             <div className="m-2 rounded-md border-2 bg-slate-400 p-2 font-medium text-black">
               <SignInButton>Sign in</SignInButton>
@@ -212,7 +227,6 @@ const Home: NextPage = () => {
               </div>
             </>
           )}
-
           <CommentFeed />
         </section>
       </main>
