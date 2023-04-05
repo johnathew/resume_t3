@@ -11,13 +11,14 @@ import { BsSun } from "react-icons/bs";
 import Image from "next/image";
 import gradPic from "public/gradPic.jpeg";
 import { api } from "~/utils/api";
-import type {RouterOutputs} from "~/utils/api"
+import type { RouterOutputs } from "~/utils/api";
 import { useState } from "react";
 import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime"
+import relativeTime from "dayjs/plugin/relativeTime";
 import { LoadingPage } from "~/components/loading";
-dayjs.extend(relativeTime)
+dayjs.extend(relativeTime);
 
+// TODO: add job history section
 const AddCommentWizard = () => {
   const { user } = useUser();
   if (!user) return null;
@@ -55,8 +56,9 @@ const CommentsView = (props: CommentWithUser) => {
         height={56}
       />
       <div className="flex flex-col">
-        <div className="flex text-slate-950 underline-offset-3 dark:text-white">
-          <span>User: {author.username}</span><span>{`・${dayjs(comment.createdAt).fromNow()}`}</span>
+        <div className="underline-offset-3 flex text-slate-950 dark:text-white">
+          <span>User: {author.username}</span>
+          <span>{`・${dayjs(comment.createdAt).fromNow()}`}</span>
         </div>
         {comment.content}
       </div>
@@ -64,16 +66,26 @@ const CommentsView = (props: CommentWithUser) => {
   );
 };
 
+const CommentFeed = () => {
+  const { data, isLoading: postsLoading } = api.comments.getAll.useQuery();
+  if (postsLoading) return <LoadingPage />;
+  if (!data) return <div>Error</div>;
+  return (
+    <div>
+      {data?.map((fullComment) => (
+        <CommentsView {...fullComment} key={fullComment.comment.id} />
+      ))}
+    </div>
+  );
+};
+
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(true);
-  const { data, isLoading } = api.comments.getAll.useQuery();
-  const user = useUser();
+  api.comments.getAll.useQuery();
+  const { isLoaded: userLoaded, isSignedIn } = useUser();
 
-  if (isLoading) return <LoadingPage />
-  if (!data) return <div>Something went wrong.</div>;
+  if (!userLoaded) return <div />;
 
-
-  console.log(user);
   return (
     <>
       <Head>
@@ -152,47 +164,47 @@ const Home: NextPage = () => {
         <section className="flex w-full flex-col justify-between border-x-4 border-b-2 border-x-slate-50 border-b-slate-200 bg-slate-300  px-5 py-6 dark:bg-slate-950 md:w-3/4">
           <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
             <h2 className="text-2xl font-bold underline">EDUCATION</h2>
-            <div className="w-1/2 justify-between rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-              <p className="font-semibold">Bachelor of Science in Biology</p>
-              <p>Graduation: 2016</p>
+            <div className="w-1/2 justify-between rounded-lg p-1 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+              <p className="font-semibold">・Bachelor of Science in Biology</p>
+              <p className="pl-4">Graduation: 2016</p>
             </div>
-            <p className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-              Texes A&M Univeristy - College Station, TX
+            <p className="w-3/4 break-normal rounded-lg p-1 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+              ・Texes A&M Univeristy - College Station, TX
             </p>
             <h2 className="text-2xl font-bold underline">Languages</h2>
             <ul>
               <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                Javascript
+                ・Typescript
               </li>
               <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                React JS
+                ・React JS
               </li>
             </ul>
             <h2 className="text-2xl font-bold underline">Projects</h2>
             <ul>
               <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                Calculator
+                ・Calculator
               </li>
               <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                Memory Game
+                ・Memory Game
               </li>
               <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                Blog App
+                ・Blog App
               </li>
             </ul>
             <h2 className="text-2xl font-bold underline">Skills</h2>
             <ul className="">
               <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                Adobe Photoshop
+                ・Adobe Photoshop
               </li>
             </ul>
           </div>
-          {!user.isSignedIn && (
+          {!isSignedIn && (
             <div className="m-2 rounded-md border-2 bg-slate-400 p-2 font-medium text-black">
               <SignInButton>Sign in</SignInButton>
             </div>
           )}
-          {user.isSignedIn && (
+          {isSignedIn && (
             <>
               <AddCommentWizard />
               <div className="w-1/2 dark:bg-slate-400 dark:text-white">
@@ -200,11 +212,8 @@ const Home: NextPage = () => {
               </div>
             </>
           )}
-          <div>
-            {data?.map((fullComment) => (
-              <CommentsView {...fullComment} key={fullComment.comment.id} />
-            ))}
-          </div>
+
+          <CommentFeed />
         </section>
       </main>
     </>
