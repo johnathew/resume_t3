@@ -22,15 +22,13 @@ dayjs.extend(relativeTime);
 // TODO: add job history section
 const AddCommentWizard = () => {
   const { user } = useUser();
-  const [input, setInput] = useState('')
-  const {mutate, isLoading: isPosting} = api.comments.create.useMutation(
-
-  )
+  const [input, setInput] = useState("");
+  const { mutate, isLoading: isPosting } = api.comments.create.useMutation();
 
   if (!user) return null;
 
   return (
-    <div className="flex h-auto w-1/2 gap-1">
+    <div className="flex h-auto w-1/2 gap-3">
       <Image
         src={user.profileImageUrl}
         className="w-14 rounded-md border-2 border-black drop-shadow-lg"
@@ -46,7 +44,12 @@ const AddCommentWizard = () => {
         onChange={(e) => setInput(e.target.value)}
         disabled={isPosting}
       />
-      <button onClick={() => mutate({content: input})}>Post</button>
+      <button
+        onClick={() => mutate({ content: input })}
+        className="rounded-lg border-2 bg-slate-400 p-2"
+      >
+        Post
+      </button>
     </div>
   );
 };
@@ -121,13 +124,13 @@ const Home: NextPage = () => {
             {darkMode && (
               <IoIosSunny
                 onClick={() => setDarkMode((prev) => !prev)}
-                className="hover:bg-amber-400"
+                className="rounded-lg hover:bg-amber-400"
               />
             )}
             {!darkMode && (
               <BsSun
                 onClick={() => setDarkMode((prev) => !prev)}
-                className="hover:bg-amber-400"
+                className="rounded-lg hover:bg-amber-400"
               />
             )}
           </div>
@@ -173,47 +176,66 @@ const Home: NextPage = () => {
           </div>
         </div>
         <section className="flex w-full flex-col justify-between border-x-4 border-b-2 border-x-slate-50 border-b-slate-200 bg-slate-300  px-5 py-6 dark:bg-slate-950 md:w-3/4">
-          <Tabs panels={[
-            {name: 'About me', content: <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
-            <h2 className="text-2xl font-bold underline">EDUCATION</h2>
-            <div className="w-1/2 justify-between rounded-lg p-1 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-              <p className="font-semibold">・Bachelor of Science in Biology</p>
-              <p className="pl-4">Graduation: 2016</p>
-            </div>
-            <p className="w-3/4 break-normal rounded-lg p-1 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-              ・Texes A&M University - College Station, TX
-            </p>
-            <h2 className="text-2xl font-bold underline">Languages</h2>
-            <ul>
-              <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                ・Typescript
-              </li>
-              <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                ・React JS
-              </li>
-            </ul>
-            <h2 className="text-2xl font-bold underline">Projects</h2>
-            <ul>
-              <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                ・Calculator
-              </li>
-              <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                ・Memory Game
-              </li>
-              <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                ・Blog App
-              </li>
-            </ul>
-            <h2 className="text-2xl font-bold underline">Skills</h2>
-            <ul className="">
-              <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
-                ・Adobe Photoshop
-              </li>
-            </ul>
-          </div> },
-          {name: 'Job history', content: <div>Prev Jobs go here</div>}
-          ]}/>
-          
+          <Tabs
+            panels={[
+              {
+                name: "About me",
+                content: (
+                  <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
+                    <h2 className="text-2xl font-bold underline">EDUCATION</h2>
+                    <div className="w-full justify-between p-1 md:w-1/2">
+                      <ul className="list-inside list-disc">
+                        <li className="w-full rounded-lg p-0.5 font-semibold hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                          Bachelor of Science in Biology <br />
+                          <span className="pl-5 font-light">
+                            Graduation: 2016
+                          </span>
+                        </li>
+                        <li className="rounded-lg p-0.5 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                          Texas A&M University -
+                          <span className="font-light">
+                            College Station, TX
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <h2 className="text-2xl font-bold underline">Languages</h2>
+                    <ul className="list-inside list-disc">
+                      <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                        Typescript
+                      </li>
+                      <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                        React JS
+                      </li>
+                    </ul>
+                    <h2 className="text-2xl font-bold underline">Projects</h2>
+                    <ul className="list-inside list-disc">
+                      <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                        Calculator
+                      </li>
+                      <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                        Memory Game
+                      </li>
+                      <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                        Blog App
+                      </li>
+                    </ul>
+                    <h2 className="text-2xl font-bold underline">Skills</h2>
+                    <ul className="list-inside list-disc">
+                      <li className="w-1/2 rounded-lg p-2 hover:bg-slate-600 hover:text-yellow-400 hover:underline">
+                        Adobe Photoshop
+                      </li>
+                    </ul>
+                  </div>
+                ),
+              },
+              {
+                name: "Job history",
+                content: <div className="h-1/3">Prev Jobs go here</div>,
+              },
+            ]}
+          />
+
           {!isSignedIn && (
             <div className="m-2 rounded-md border-2 bg-slate-400 p-2 font-medium text-black">
               <SignInButton>Sign in</SignInButton>
