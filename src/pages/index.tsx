@@ -118,9 +118,14 @@ const Home: NextPage = () => {
             </div>
           </Link>
           <div className="ml-2 flex h-10 w-auto space-x-2 rounded-lg p-3 text-2xl">
-            <AiOutlineInstagram className="rounded-lg hover:bg-amber-400" />
-            <FiGithub className="rounded-lg hover:bg-amber-400" />
-            <CiLinkedin className="rounded-lg hover:bg-amber-400" />
+            <Link href="https://www.instagram.com/johnathew_k/">
+              <AiOutlineInstagram className="rounded-lg hover:bg-amber-400" />
+            </Link>
+            <Link href="https://github.com/johnathew">
+    
+              <FiGithub className="rounded-lg hover:bg-amber-400" />
+            </Link>
+           <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/"><CiLinkedin className="rounded-lg hover:bg-amber-400" /></Link> 
             {darkMode && (
               <IoIosSunny
                 onClick={() => setDarkMode((prev) => !prev)}
@@ -149,7 +154,7 @@ const Home: NextPage = () => {
               className="h-12 w-auto rounded-full"
             />
             <div className="items-left flex flex-col pl-3">
-              <h1 className="justify-center text-2xl font-medium hover:text-yellow-400">
+              <h1 className="justify-center text-2xl font-medium hover:text-sky-700 dark:hover:text-yellow-400">
                 John A. Kornegay
               </h1>
               <h2 className="text-sm font-light">Frontend Developer</h2>
@@ -179,9 +184,9 @@ const Home: NextPage = () => {
           <Tabs
             panels={[
               {
-                name: "About me",
+                name: "Education & Skills",
                 content: (
-                  <div className="justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
+                  <div className="h-full justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
                     <h2 className="text-2xl font-bold underline">EDUCATION</h2>
                     <div className="w-full justify-between p-1 md:w-1/2">
                       <ul className="list-inside list-disc">
@@ -231,7 +236,123 @@ const Home: NextPage = () => {
               },
               {
                 name: "Job history",
-                content: <div className="h-1/3">Prev Jobs go here</div>,
+                content: (
+                  <div className="h-full p-1">
+                    <h1 className="text-lg font-bold underline">
+                      Helpdesk Specialist
+                    </h1>
+                    <h2 className="flex justify-between italic">
+                      Maximus Federal - Remote; McAllen, TX
+                      <span>
+                        <p>July 2021 - Present</p>
+                      </span>
+                    </h2>
+                    <ul className="w-full list-inside list-disc pb-2 md:w-3/4">
+                      <li>
+                        Troubleshoot official CDC software related issues for
+                        healthcare professionals and the public.
+                      </li>
+                      <li>
+                        Process escalation service request tickets as needed to
+                        ensure service levels are maintained.
+                      </li>
+                      <li>
+                        Coordinate with official CDC representatives to receive
+                        reports on system updates.
+                      </li>
+                      <li>
+                        Collaborate with other Helpdesk Specialists to share new
+                        procedures and/or critical information received from
+                        upper management.
+                      </li>
+                    </ul>
+                    <h1 className="text-lg font-bold underline">
+                      University of Texas Rio Grande Valley
+                    </h1>
+                    <h2 className="flex justify-between italic">
+                      Teaching Assistant - Edinburg, TX
+                      <span>
+                        <p>Spring 2021</p>
+                      </span>
+                    </h2>
+                    <ul className="w-full list-inside list-disc pb-2 md:w-3/4">
+                      <li>
+                        Assisted undergraduate Chemistry students with course
+                        material, holding weekly Q&A sessions
+                      </li>
+                      <li>
+                        Conducted online test reviews and held office hours for
+                        personal tutoring
+                      </li>
+                    </ul>
+                    <h1 className="text-lg font-bold underline">SAMES, Inc.</h1>
+                    <h2 className="flex justify-between italic">
+                      Survey Assistant - McAllen, TX
+                      <span>
+                        <p>October 2021 - December 2021</p>
+                      </span>
+                    </h2>
+                    <ul className="w-full list-inside list-disc pb-2 md:w-3/4">
+                      <li>
+                        Mapped out boundaries for businesses and residential
+                        homes using GPS technology
+                      </li>
+                      <li>Provided measurements and layouts for construction projects in varying locations</li>
+                    </ul>
+                    <h1 className="text-lg font-bold underline">
+                      Pharmacy Technician
+                    </h1>
+                    <h2 className="flex justify-between italic">
+                      Walgreens Pharmacy- Palmview, TX
+                      <span>
+                        <p>October 2016 - May 2020</p>
+                      </span>
+                    </h2>
+                    <ul className="w-full list-inside list-disc pb-2 md:w-3/4">
+                      <li>
+                        Utilized propriety software to manage patient’s
+                        prescriptions, resolve rejected insurance claims, and
+                        scheduled refills for medication
+                      </li>
+                      <li>
+                        Maintained strong attention to detail, making sure all
+                        patients received the correct prescription(s);
+                        professionally handled confidential patient information.
+                      </li>
+                      <li>
+                        Resolved any hardware related issues that inhibited
+                        normal pharmacy operations.
+                      </li>
+                    </ul>
+                  </div>
+                ),
+              },
+              {
+                name: "Drive",
+                content: (
+                  <div className="h-screen">
+                    <h1 className="text-lg font-bold underline">Self-taught</h1>
+                    <p>
+                      Self-taught front-end hyphen-user web developer. Utilizing
+                      primarily free online resources, me, John Kornegay, the
+                      guy writing this, has become semi-proficient at writing
+                      code. I've even gone so far as to make my own
+                      website...this one. The one you are using right now.
+                      Pretty cool huh. Look im in the computer...
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                name: "Art",
+                content: (
+                  <div className="h-screen">
+                    <h1 className="text-lg font-bold underline">
+                      Photoshop Projects/ Memes go here
+                    </h1>
+                    <p></p>
+                  </div>
+                ),
               },
             ]}
           />
