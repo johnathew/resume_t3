@@ -122,10 +122,11 @@ const Home: NextPage = () => {
               <AiOutlineInstagram className="rounded-lg hover:bg-amber-400" />
             </Link>
             <Link href="https://github.com/johnathew">
-    
               <FiGithub className="rounded-lg hover:bg-amber-400" />
             </Link>
-           <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/"><CiLinkedin className="rounded-lg hover:bg-amber-400" /></Link> 
+            <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/">
+              <CiLinkedin className="rounded-lg hover:bg-amber-400" />
+            </Link>
             {darkMode && (
               <IoIosSunny
                 onClick={() => setDarkMode((prev) => !prev)}
@@ -297,7 +298,10 @@ const Home: NextPage = () => {
                         Mapped out boundaries for businesses and residential
                         homes using GPS technology
                       </li>
-                      <li>Provided measurements and layouts for construction projects in varying locations</li>
+                      <li>
+                        Provided measurements and layouts for construction
+                        projects in varying locations
+                      </li>
                     </ul>
                     <h1 className="text-lg font-bold underline">
                       Pharmacy Technician
@@ -336,7 +340,7 @@ const Home: NextPage = () => {
                       Self-taught front-end hyphen-user web developer. Utilizing
                       primarily free online resources, me, John Kornegay, the
                       guy writing this, has become semi-proficient at writing
-                      code. I've even gone so far as to make my own
+                      code. Ive even gone so far as to make my own
                       website...this one. The one you are using right now.
                       Pretty cool huh. Look im in the computer...
                     </p>
