@@ -200,9 +200,9 @@ const Home: NextPage = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="h-full w-1/2 bg-red-500">
+                  {/* <div className="h-full w-1/2 bg-red-500">
                     test
-                  </div>
+                  </div> */}
                   </div>
                 ),
               },
