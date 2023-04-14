@@ -1,15 +1,11 @@
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { FiGithub } from "react-icons/fi";
-import { CiLinkedin, CiLocationOn } from "react-icons/ci";
-import { IoIosSunny } from "react-icons/io";
+import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineMail } from "react-icons/hi";
-import { BsSun } from "react-icons/bs";
 import Image from "next/image";
 import gradPic from "public/gradPic.jpeg";
+import UTRGVpic from "public/UTRGV_expo.png";
 import { api } from "~/utils/api";
 import type { RouterOutputs } from "~/utils/api";
 import { useState } from "react";
@@ -106,20 +102,15 @@ const Home: NextPage = () => {
       <Head>
         <title>Resume</title>
       </Head>
-     <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main
         className={`flex h-full w-full flex-col items-center text-black ${
           darkMode ? "dark" : ""
         } `}
       >
         <div className="flex w-full flex-col border-x-4  border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-300 px-5 py-6 dark:bg-slate-950 dark:text-slate-200 md:w-3/4">
-          <div className=" flex w-full items-center justify-start border-white px-1 pb-2">
-            <Image
-              src={gradPic}
-              alt="grad pic"
-              className="h-12 w-auto rounded-full"
-            />
-            <div className="items-left flex flex-col pl-3">
+          <div className=" flex w-full items-center justify-start border-white pb-2">
+            <div className="items-left flex flex-col">
               <h1 className="justify-center text-2xl font-medium hover:text-sky-700 dark:hover:text-amber-500">
                 John A. Kornegay
               </h1>
@@ -150,59 +141,31 @@ const Home: NextPage = () => {
           <Tabs
             panels={[
               {
-                name: "Education & Skills",
+                name: "About",
                 content: (
-                  <div className="flex flex-row w-full">
-                  <div className="h-full w-full justify-center bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200 overflow-scroll">
-                    <h2 className="text-2xl font-bold underline">EDUCATION</h2>
-                    <div className="w-full justify-between p-1 md:w-1/2">
-                      <ul className="list-inside list-disc">
-                        <li className="w-full rounded-lg p-0.5 font-semibold hover:bg-slate-600 hover:text-amber-500 hover:underline ">
-                          Bachelor of Science in Biology <br />
-                          <span className="pl-6 font-light">
-                            Graduation: 2016
-                          </span>
-                        </li>
-                        <li className="rounded-lg p-0.5 hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                          Texas A&M University - 
-                          <span className="font-light">
-                             College Station, TX
-                          </span>
-                        </li>
-                      </ul>
+                  <div className="h-full w-full flex-row md:flex">
+                    <div className="flex w-full flex-col items-center md:flex md:items-center">
+                      <Image
+                        src={UTRGVpic}
+                        alt="grad pic"
+                        className="h-auto w-auto rounded-full border border-black drop-shadow-lg md:h-64"
+                      />
+                      <p className="font-thin text-black dark:text-white">
+                        My face '22
+                      </p>
                     </div>
-                    <h2 className="text-2xl font-bold underline">Languages</h2>
-                    <ul className="list-inside list-disc p-2 space-y-2">
-                      <li className="w-1/2 rounded-lg  hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                        Typescript
-                      </li>
-                      <li className="w-1/2 rounded-lg  hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                        React JS
-                      </li>
-                      <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">CSS</li>
-                    </ul>
-                    <h2 className="text-2xl font-bold underline">Projects</h2>
-                    <ul className="list-inside list-disc p-2">
-                      <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                        Calculator
-                      </li>
-                      <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                        Memory Game
-                      </li>
-                      <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                        Blog App
-                      </li>
-                    </ul>
-                    <h2 className="text-2xl font-bold underline">Skills</h2>
-                    <ul className="list-inside list-disc p-2">
-                      <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                        Adobe Photoshop
-                      </li>
-                    </ul>
-                  </div>
-                  {/* <div className="h-full w-1/2 bg-red-500">
-                    test
-                  </div> */}
+                    <div className="flex w-full flex-col justify-center md:items-center">
+                      <h2 className="md:text-lg border-y-2 font-light font-serif m-2 p-4 ">
+                        <span className="font-serif font-bold">
+                          A 2016 graduate from Texas A&M University
+                        </span>{" "}
+                        who finally figured out how to make his resume website
+                        have a responsive design and suddenly thinks he deserves
+                        a job. Graduated with a science degree in Molecular and
+                        Cell Biology and naturally decided to become a
+                        programmer.
+                      </h2>
+                    </div>
                   </div>
                 ),
               },
@@ -303,13 +266,65 @@ const Home: NextPage = () => {
                 ),
               },
               {
-                name: "Drive",
+                name: "Education & Skills",
                 content: (
-                  <div className="h-screen">
-                    <h1 className="text-lg font-bold underline">Self-taught</h1>
-                    <p>
-                      Self-taught front-end web developer. 
-                    </p>
+                  <div className="flex w-full flex-row">
+                    <div className="h-full w-full justify-center overflow-auto bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
+                      <h2 className="text-2xl font-bold underline">
+                        EDUCATION
+                      </h2>
+                      <div className="w-full justify-between p-1 md:w-1/2">
+                        <ul className="list-inside list-disc">
+                          <li className="w-full rounded-lg p-0.5 font-semibold hover:bg-slate-600 hover:text-amber-500 hover:underline ">
+                            Bachelor of Science in Molecular and Cell Biology <br />
+                            <span className="md:pl-6 font-light">
+                              Graduation: 2016
+                            </span>
+                          </li>
+                          <li className="rounded-lg p-0.5 hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                            Texas A&M University -
+                            <span className="font-light">
+                              College Station, TX
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                      <h2 className="text-2xl font-bold underline">
+                        Languages
+                      </h2>
+                      <ul className="list-inside list-disc space-y-2 p-2">
+                        <li className="w-1/2 rounded-lg  hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          Typescript
+                        </li>
+                        <li className="w-1/2 rounded-lg  hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          React JS
+                        </li>
+                        <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          CSS
+                        </li>
+                      </ul>
+                      <h2 className="text-2xl font-bold underline">Projects</h2>
+                      <ul className="list-inside list-disc p-2">
+                        <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          Calculator
+                        </li>
+                        <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          Memory Game
+                        </li>
+                        <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          Blog App
+                        </li>
+                      </ul>
+                      <h2 className="text-2xl font-bold underline">Skills</h2>
+                      <ul className="list-inside list-disc p-2">
+                        <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
+                          Adobe Photoshop
+                        </li>
+                      </ul>
+                    </div>
+                    {/* <div className="h-full w-1/2 bg-red-500">
+                    test
+                  </div> */}
                   </div>
                 ),
               },
