@@ -4,7 +4,6 @@ import Head from "next/head";
 import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineMail } from "react-icons/hi";
 import Image from "next/image";
-import gradPic from "public/gradPic.jpeg";
 import UTRGVpic from "public/UTRGV_expo.png";
 import { api } from "~/utils/api";
 import type { RouterOutputs } from "~/utils/api";
@@ -16,7 +15,6 @@ import Tabs from "~/components/Tabs";
 import Header from "~/components/Header";
 dayjs.extend(relativeTime);
 
-// TODO: add job history section
 const AddCommentWizard = () => {
   const { user } = useUser();
   const [input, setInput] = useState("");
@@ -151,11 +149,11 @@ const Home: NextPage = () => {
                         className="h-auto w-auto rounded-full border border-black drop-shadow-lg md:h-64"
                       />
                       <p className="font-thin text-black dark:text-white">
-                        My face '22
+                        My face &apos;22
                       </p>
                     </div>
                     <div className="flex w-full flex-col justify-center md:items-center">
-                      <h2 className="md:text-lg border-y-2 font-light font-serif m-2 p-4 ">
+                      <h2 className="md:text-lg border-y-2 font-light font-serif m-2 p-4 dark:border-y-amber-500 border-y-black ">
                         <span className="font-serif font-bold">
                           A 2016 graduate from Texas A&M University
                         </span>{" "}
