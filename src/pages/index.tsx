@@ -146,9 +146,11 @@ const Home: NextPage = () => {
                       <Image
                         src={UTRGVpic}
                         alt="grad pic"
+                        placeholder="blur"
+                        priority={true}
                         className="h-auto w-auto rounded-full border border-black drop-shadow-lg md:h-64"
                       />
-                      <p className="font-thin text-black dark:text-white">
+                      <p className="font-thin text-black dark:text-white pt-2">
                         My face &apos;22
                       </p>
                     </div>
@@ -264,16 +266,16 @@ const Home: NextPage = () => {
                 ),
               },
               {
-                name: "Education & Skills",
+                name: "Education & Projects",
                 content: (
-                  <div className="flex w-full flex-row">
-                    <div className="h-full w-full justify-center overflow-auto bg-slate-300 py-2 text-black dark:bg-slate-950 dark:text-slate-200">
+                  <div className="flex w-full h-full flex-col md:flex-row">
+                    <div className="h-full w-full justify-center overflow-auto py-2 text-black dark:bg-slate-950 dark:text-slate-200">
                       <h2 className="text-2xl font-bold underline">
                         EDUCATION
                       </h2>
-                      <div className="w-full justify-between p-1 md:w-1/2">
+                      <div className="w-full justify-between p-1 md:w-full">
                         <ul className="list-inside list-disc">
-                          <li className="w-full rounded-lg p-0.5 font-semibold hover:bg-slate-600 hover:text-amber-500 hover:underline ">
+                          <li className="w-full rounded-lg p-0.5 font-semibold hover:bg-slate-600 hover:text-amber-500 hover:underline break-keep ">
                             Bachelor of Science in Molecular and Cell Biology <br />
                             <span className="md:pl-6 font-light">
                               Graduation: 2016
@@ -290,7 +292,7 @@ const Home: NextPage = () => {
                       <h2 className="text-2xl font-bold underline">
                         Languages
                       </h2>
-                      <ul className="list-inside list-disc space-y-2 p-2">
+                      <ul className="list-inside list-disc space-y-2 p-2 ">
                         <li className="w-1/2 rounded-lg  hover:bg-slate-600 hover:text-amber-500 hover:underline">
                           Typescript
                         </li>
@@ -302,7 +304,7 @@ const Home: NextPage = () => {
                         </li>
                       </ul>
                       <h2 className="text-2xl font-bold underline">Projects</h2>
-                      <ul className="list-inside list-disc p-2">
+                      <ul className="list-inside list-disc p-2 space-y-2">
                         <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
                           Calculator
                         </li>
@@ -310,7 +312,7 @@ const Home: NextPage = () => {
                           Memory Game
                         </li>
                         <li className="w-1/2 rounded-lg hover:bg-slate-600 hover:text-amber-500 hover:underline">
-                          Blog App
+                          Pixel draw
                         </li>
                       </ul>
                       <h2 className="text-2xl font-bold underline">Skills</h2>
@@ -320,9 +322,9 @@ const Home: NextPage = () => {
                         </li>
                       </ul>
                     </div>
-                    {/* <div className="h-full w-1/2 bg-red-500">
-                    test
-                  </div> */}
+                    <div className="h-full w-full bg-blue-500">
+                    
+                  </div>
                   </div>
                 ),
               },
