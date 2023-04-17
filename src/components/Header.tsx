@@ -18,10 +18,10 @@ const Header = ({ darkMode, setDarkMode, setPageView, pageView }: HeaderTypes) =
     <header className={`flex w-full justify-center ${darkMode ? "dark" : ""}`}>
       <div className="m-0 flex w-full items-center justify-between border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-200 p-2 text-slate-800 md:w-3/4 md:text-lg">
           <div className="flex justify-start space-x-2">
-            <button className={`md:align-center rounded-lg p-2 ${pageView && "bg-slate-400 border-2"} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={pageView}>
+            <button className={`md:align-center rounded-lg p-2 ${pageView ? "bg-slate-400 border-2" : ""} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={pageView}>
               Resume
             </button>
-            <button className={`md:align-center rounded-lg p-2 ${!pageView && "bg-slate-400 border-2"} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={!pageView}>Blog</button>
+            <button className={`md:align-center rounded-lg p-2 ${!pageView ? "bg-slate-400 border-2" : ""} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={!pageView}>Blog</button>
           </div>
         <div className="ml-2 flex h-10 w-auto space-x-2 rounded-lg p-3 text-2xl">
           <Link href="https://www.instagram.com/johnathew_k/">
