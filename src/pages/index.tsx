@@ -13,6 +13,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { LoadingPage } from "~/components/loading";
 import Tabs from "~/components/Tabs";
 import Header from "~/components/Header";
+import Blog from "~/components/Blog";
 dayjs.extend(relativeTime);
 
 const AddCommentWizard = () => {
@@ -90,6 +91,7 @@ const CommentFeed = () => {
 
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [pageView, setPageView] = useState<boolean>(true)
   api.comments.getAll.useQuery();
   const { isLoaded: userLoaded, isSignedIn } = useUser();
 
@@ -100,14 +102,14 @@ const Home: NextPage = () => {
       <Head>
         <title>Resume</title>
       </Head>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} setPageView={setPageView} pageView={pageView}/>
+      {pageView && <main
         className={`flex h-full w-full flex-col items-center text-black ${
           darkMode ? "dark" : ""
         } `}
       >
         <div className="flex w-full flex-col border-x-4  border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-300 px-5 py-6 dark:bg-slate-950 dark:text-slate-200 md:w-3/4">
-          <div className=" flex w-full items-center justify-start border-white pb-2">
+          <div className="flex w-full items-center justify-start border-white pb-2">
             <div className="items-left flex flex-col">
               <h1 className="justify-center text-2xl font-medium hover:text-sky-700 dark:hover:text-amber-500">
                 John A. Kornegay
@@ -357,7 +359,8 @@ const Home: NextPage = () => {
           )}
           <CommentFeed />
         </section>
-      </main>
+      </main>}
+      {!pageView && <Blog darkMode={darkMode} />}
     </>
   );
 };

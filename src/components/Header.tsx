@@ -8,23 +8,21 @@ import { IoIosSunny } from "react-icons/io";
 
 type HeaderTypes = {
   darkMode: boolean;
+  pageView: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
+  setPageView: Dispatch<SetStateAction<boolean>>
 };
 
-const Header = ({ darkMode, setDarkMode }: HeaderTypes) => {
+const Header = ({ darkMode, setDarkMode, setPageView, pageView }: HeaderTypes) => {
   return (
     <header className={`flex w-full justify-center ${darkMode ? "dark" : ""}`}>
       <div className="m-0 flex w-full items-center justify-between border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-200 p-2 text-slate-800 md:w-3/4 md:text-lg">
-        <Link href="/">
           <div className="flex justify-start space-x-2">
-            <nav className="md:align-center rounded-lg border-2 bg-slate-400 p-2 drop-shadow-md active:bg-red-500">
+            <button className={`md:align-center rounded-lg p-2 ${pageView && "bg-slate-400 border-2"} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={pageView}>
               Resume
-            </nav>
-            <Link href="/about">
-              <nav className="rounded-lg p-2">Blog</nav>
-            </Link>
+            </button>
+            <button className={`md:align-center rounded-lg p-2 ${!pageView && "bg-slate-400 border-2"} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={!pageView}>Blog</button>
           </div>
-        </Link>
         <div className="ml-2 flex h-10 w-auto space-x-2 rounded-lg p-3 text-2xl">
           <Link href="https://www.instagram.com/johnathew_k/">
             <AiOutlineInstagram className="rounded-lg hover:bg-amber-400" />
