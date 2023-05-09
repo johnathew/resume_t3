@@ -99,7 +99,7 @@ const Home: NextPage = () => {
   if (!userLoaded) return <div />;
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-blue-900 to-orange-400 h-screen w-screen overflow-scroll">
       <Head>  
         <title>Resume</title>
       </Head>
@@ -115,10 +115,10 @@ const Home: NextPage = () => {
             darkMode ? "dark" : ""
           } `}
         >
-          <div className="flex w-full flex-col border-x-4  border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-300 px-5 py-6 dark:bg-slate-950 dark:text-slate-200 md:w-3/4">
+          <div className="flex w-full flex-col px-5 py-6 dark:bg-slate-950 text-slate-200 md:w-3/4">
             <div className="flex w-full items-center justify-start border-white pb-2">
               <div className="items-left flex flex-col">
-                <h1 className="justify-center text-2xl font-bold transform duration-500 hover:-translate-y-2 hover:text-sky-700 hover:underline dark:hover:text-amber-500 tracking-tight font-sans">
+                <h1 className="justify-center text-2xl font-bold transform duration-500 hover:-translate-y-2 hover:text-orange-400 hover:underline dark:hover:text-amber-500 tracking-tight">
                   John Andrew Kornegay
                 </h1>
                 <h2 className="text-sm font-light font-sans">Frontend Developer</h2>
@@ -132,19 +132,19 @@ const Home: NextPage = () => {
               </p>
             </div>
             <div className="flex w-3/4 items-end p-1 pt-2">
-              <CiLocationOn className="text-2xl dark:text-amber-500 text-sky-800" />
+              <CiLocationOn className="text-2xl dark:text-amber-500 text-orange-400" />
               <h2 className="text-md pl-0.5 font-normal tracking-wide">
                 McAllen, TX
               </h2>
             </div>
             <div className="flex w-3/4 items-center pl-2">
-              <HiOutlineMail className="text-lg dark:text-amber-500 text-sky-800" />
+              <HiOutlineMail className="text-lg dark:text-amber-500 text-orange-400" />
               <h2 className="text-md pl-1 font-light tracking-wide">
                 Jakornegay01@gmail.com
               </h2>
             </div>
           </div>
-          <section className="flex w-full flex-col justify-between border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-300  px-5 py-6 dark:bg-slate-950 md:w-3/4">
+          <section className="flex w-full h-full flex-col justify-between border-x-4 border-b-2 border-x-slate-200 border-b-slate-200 bg-slate-300  px-5 py-6 dark:bg-slate-950 md:w-3/4">
             <Tabs
               panels={[
                 {
@@ -282,8 +282,8 @@ const Home: NextPage = () => {
                   content: (
                     <div className="flex h-full w-full flex-col md:flex-row">
                       <div className="h-full w-full justify-center overflow-auto py-2 text-black dark:bg-slate-950 dark:text-slate-200">
-                        <h2 className="text-2xl font-bold underline">
-                          EDUCATION
+                        <h2 className="text-2xl font-bold underline dark:hover:text-amber-500 hover:text-sky-700">
+                          Education
                         </h2>
                         <div className="w-full justify-between p-1 md:w-full">
                           <ul className="list-inside list-disc">
@@ -343,7 +343,6 @@ const Home: NextPage = () => {
                           </li>
                         </ul>
                       </div>
-                      <div className="h-full w-full bg-blue-500"></div>
                     </div>
                   ),
                 },
@@ -385,7 +384,7 @@ const Home: NextPage = () => {
         </main>
       )}
       {!pageView && <Blog darkMode={darkMode} />}
-    </>
+    </div>
   );
 };
 
