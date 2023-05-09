@@ -21,8 +21,8 @@ const Tabs: FC<{
           onClick={() => setActiveTabName(panel.name)}
           key={panel.name}
           className= {classNames(
-            "bg-slate-300 relative z-10 hover:underline cursor-pointer inline-block px-4 py-2 rounded-t-sm mr-2 dark:bg-slate-950 dark:text-slate-200 border-b-2",
-            panel.name === activeTabName && "font-bold border-b-gray-950 dark:border-b-amber-500 bg-amber-500 drop-shadow-lg rounded-lg dark:bg-slate-200 dark:text-black"
+            "bg-slate-300 relative z-10 hover:underline cursor-pointer inline-block px-4 py-2 rounded-t-sm mr-2 dark:bg-slate-950 dark:text-slate-200 border-b-2 hover:-inset-y-2 transform duration-500",
+            panel.name === activeTabName && "font-bold border-b-gray-950 dark:border-b-amber-500 bg-amber-500 drop-shadow-lg rounded-lg dark:bg-slate-200 dark:text-black hover:inset-x-2 transform duration-500"
           )}
         >
           {panel.name}

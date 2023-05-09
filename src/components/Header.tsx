@@ -10,7 +10,7 @@ type HeaderTypes = {
   darkMode: boolean;
   pageView: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
-  setPageView: Dispatch<SetStateAction<boolean>>
+  setPageView: Dispatch<SetStateAction<boolean>>;
 };
 
 const Header = ({ darkMode, setDarkMode, setPageView, pageView }: HeaderTypes) => {
