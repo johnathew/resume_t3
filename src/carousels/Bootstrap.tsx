@@ -14,9 +14,8 @@ export default function BootstrapCarousel() {
     setIndex(selectedIndex);
   };
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} controls={true}>
+    <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
       <Carousel.Item
-        interval={9999999}
         className="flex h-full w-full flex-col items-center justify-center overflow-scroll text-white lg:mx-auto md:mt-10 md:h-screen md:flex-col md:items-start"
       >
         <div className="flex flex-col items-center md:flex-row md:items-center md:w-3/4 md:mx-auto">
@@ -26,7 +25,7 @@ export default function BootstrapCarousel() {
             className="h-3/4 w-1/2 rounded-full drop-shadow-sm md:w-72 md:h-auto"
           />
           <div className="flex w-full flex-col justify-start px-5 pt-4 align-middle dark:text-white md:w-3/4">
-            <div className="flex w-full items-center justify-start border-white pb-4">
+            <div className="flex w-full items-center justify-start pb-4">
               <div className="flex flex-col break-keep">
                 <h3 className="flex flex-col items-start justify-start md:flex-row">
                   Hello, my name is
@@ -40,7 +39,7 @@ export default function BootstrapCarousel() {
               </div>
             </div>
             <div className="border-b-4 border-[#71fead] pb-4 dark:border-slate-200">
-              <p className="text-md font-extralight">
+              <p className="text-md font-normal tracking-wide">
                 A self-taught and highly motivated individual seeking an
                 internship opportunity to gain experience as as a front-end
                 developer.
@@ -48,21 +47,23 @@ export default function BootstrapCarousel() {
             </div>
             <div className="flex items-center pl-1 pt-4 font-thin">
               <CiLocationOn className="text-2xl text-[#71fead]" />
-              <h3 className="my-auto pl-1 text-base tracking-wide">
+              <h3 className="my-auto pl-1 text-base tracking-wide font-light">
                 McAllen, TX
               </h3>
             </div>
-            <div className="flex items-center pl-2 text-lg font-thin">
+            <div className="flex items-center pl-2 text-lg">
               <HiOutlineMail className="text-[#71fead]" />
-              <h3 className="pl-1 pt-1 text-base tracking-wide">
+              <h3 className="pl-1 pt-1 text-base tracking-wide font-light">
                 Jakornegay01@gmail.com
               </h3>
             </div>
           </div>
         </div>
-        <div className="md:-mt-auto flex h-1/2 w-auto">
+        <div className="md:-mt-auto flex md:flex-col h-1/2 md:w-3/4 md:mx-auto">
+        <h1 className="text-2xl p-1">About Me</h1>
           <div className="flex w-full flex-col justify-center md:items-center">
-            <h2 className="md:text-md font-base m-2 border-y-2 border-y-[#437e60] p-4 font-light dark:border-y-amber-500 ">
+    
+            <h2 className="md:text-base font-base m-2 border-y-2 border-y-[#437e60] p-4 font-light dark:border-y-amber-500 ">
               <span className="font-serif font-bold">
                 A 2016 graduate from Texas A&M University
               </span>{" "}
