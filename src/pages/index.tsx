@@ -9,9 +9,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { LoadingPage } from "~/components/loading";
 import Tabs from "~/components/Tabs";
-
 import Blog from "~/components/Blog";
-// @ts-ignore
 import BootstrapCarousel from "~/carousels/Bootstrap";
 import Header from "~/components/Header";
 dayjs.extend(relativeTime);
