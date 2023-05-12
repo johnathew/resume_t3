@@ -6,5 +6,5 @@ export default {
     extend: {},
   },
   plugins: [],
-  darkMode: "class"
+  darkMode: "class",
 } satisfies Config;

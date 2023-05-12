@@ -14,3 +14,9 @@ footer {
 .dark {
     @apply bg-slate-950 text-black;
  }
+
+ .carousel-control-next-icon {
+    height: 100%;
+    width: 50rem;
+    color:aquamarine;
+  }
