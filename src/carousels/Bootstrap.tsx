@@ -15,14 +15,12 @@ export default function BootstrapCarousel() {
   };
   return (
     <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
-      <Carousel.Item
-        className="flex h-full w-full flex-col items-center justify-center overflow-scroll text-white lg:mx-auto md:mt-10 md:h-screen md:flex-col md:items-start"
-      >
-        <div className="flex flex-col items-center md:flex-row md:items-center md:w-3/4 md:mx-auto">
+      <Carousel.Item className="flex h-full w-full flex-col items-center justify-center overflow-scroll text-white md:mt-10 md:h-screen md:flex-col md:items-start lg:mx-auto">
+        <div className="flex flex-col items-center md:mx-auto md:w-3/4 md:flex-row md:items-center">
           <Image
             src={gradPic}
             alt="about me pic"
-            className="h-3/4 w-1/2 rounded-full drop-shadow-sm md:w-72 md:h-auto"
+            className="h-3/4 w-1/2 rounded-full pt-1 drop-shadow-sm md:h-auto md:w-72"
           />
           <div className="flex w-full flex-col justify-start px-5 pt-4 align-middle dark:text-white md:w-3/4">
             <div className="flex w-full items-center justify-start pb-4">
@@ -47,23 +45,22 @@ export default function BootstrapCarousel() {
             </div>
             <div className="flex items-center pl-1 pt-4 font-thin">
               <CiLocationOn className="text-2xl text-[#71fead]" />
-              <h3 className="my-auto pl-1 text-base tracking-wide font-light">
+              <h3 className="my-auto pl-1 text-base font-light tracking-wide">
                 McAllen, TX
               </h3>
             </div>
             <div className="flex items-center pl-2 text-lg">
               <HiOutlineMail className="text-[#71fead]" />
-              <h3 className="pl-1 pt-1 text-base tracking-wide font-light">
+              <h3 className="pl-1 pt-1 text-base font-light tracking-wide">
                 Jakornegay01@gmail.com
               </h3>
             </div>
           </div>
         </div>
-        <div className="md:-mt-auto flex md:flex-col h-1/2 md:w-3/4 md:mx-auto">
-        <h1 className="text-2xl p-1">About Me</h1>
+        <div className="md:-mt-auto flex h-1/2 flex-col items-center md:mx-auto md:w-3/4">
+          <h1 className="p-4 text-2xl">About Me</h1>
           <div className="flex w-full flex-col justify-center md:items-center">
-    
-            <h2 className="md:text-base font-base m-2 border-y-2 border-y-[#437e60] p-4 font-light dark:border-y-amber-500 ">
+            <h2 className="font-base m-2 border-y-2 border-y-[#437e60] p-4 font-light dark:border-y-amber-500 md:text-base ">
               <span className="font-serif font-bold">
                 A 2016 graduate from Texas A&M University
               </span>{" "}

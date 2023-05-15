@@ -16,14 +16,14 @@ type HeaderTypes = {
 const Header = ({ darkMode, setDarkMode, setPageView, pageView }: HeaderTypes) => {
   return (
     <header className={`flex w-full justify-center ${darkMode ? "dark" : ""} relative top-0 drop-shadow-2xl bg-[#00213d] text-white`} >
-      <div className="m-0 h-auto flex w-full items-center justify-between dark:text-slate-200 py-2 md:px-10 px-5 text-sm md:text-lg">
+      <div className="m-0 h-auto flex w-full align-middle justify-between dark:text-slate-200 py-2 md:px-10 px-5 text-sm md:text-lg">
           <div className="flex justify-start space-x-2">
             <button className={`md:align-center rounded-lg p-2 ${pageView ? "border-2" : ""} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={pageView}>
               Resume
             </button>
             <button className={`md:align-center rounded-lg p-2 ${!pageView ? "border-2" : ""} drop-shadow-md `} onClick={() => setPageView((prev) => !prev)} disabled={!pageView}>Blog</button>
           </div>
-        <div className="ml-2 flex h-10 w-auto space-x-2 rounded-lg p-3 text-2xl">
+        <div className="ml-2 flex h-10 w-auto space-x-2 rounded-lg items-center p-3 text-2xl">
           <Link href="https://www.instagram.com/johnathew_k/">
             <AiOutlineInstagram className="rounded-lg hover:bg-orange-400 transform duration-500" />
           </Link>
