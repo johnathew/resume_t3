@@ -197,6 +197,13 @@ export default function BootstrapCarousel() {
           </div>
         </section>
       </Carousel.Item>
+      <Carousel.Item className="h-screen w-full">
+      <section className="-m-1 flex h-full w-full flex-col overflow-scroll relative pt-12 md:pt-14 text-white md:flex md:h-screen md:p-10">
+      <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4  font-bold text-transparent md:pl-1">
+          Projects
+          </h1>
+      </section>
+      </Carousel.Item>
     </Carousel>
   );
 }
