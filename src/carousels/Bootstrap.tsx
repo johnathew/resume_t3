@@ -15,7 +15,7 @@ export default function BootstrapCarousel() {
   };
   return (
     <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
-      <Carousel.Item className="flex flex-col items-center justify-center overflow-y-visible text-white md:h-screen md:flex-col md:items-start lg:mx-auto">
+      <Carousel.Item className="flex flex-col items-center justify-center overflow-y-scroll text-white md:h-screen md:flex-col md:items-start lg:mx-auto">
         <div className="flex flex-col items-center md:mx-auto md:h-1/2 md:w-3/4 md:flex-row md:items-center md:pt-16 pt-20">
           <Image
             src={gradPic}
@@ -72,9 +72,9 @@ export default function BootstrapCarousel() {
           </div>
         </div>
       </Carousel.Item>
-      <Carousel.Item className="h-screen w-full">
-        <section className="-m-1 flex h-full w-full flex-col overflow-scroll text-white md:flex md:h-screen md:p-10">
-          <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4 font-bold text-transparent md:pl-1">
+      <Carousel.Item className="h-full w-full">
+        <section className="-m-1 flex h-full w-full flex-col overflow-scroll relative pt-12 md:pt-14 text-white md:flex md:h-screen md:p-10">
+          <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4  font-bold text-transparent md:pl-1">
             Job History
           </h1>
           <div className="top-0 ml-2 h-full border-l-2 pl-[8.5px]">
