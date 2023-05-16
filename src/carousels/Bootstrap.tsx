@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
-// import { items } from "public/Items.json";
-import { Carousel, Fade } from "react-bootstrap";
+
+import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../styles/Bootstrap.module.css";
 import gradPic from "public/gradPic.jpeg";
 import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineMail } from "react-icons/hi";
@@ -14,9 +13,9 @@ export default function BootstrapCarousel() {
     setIndex(selectedIndex);
   };
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
-      <Carousel.Item className="flex flex-col items-center justify-center overflow-y-scroll text-white md:h-screen md:flex-col md:items-start lg:mx-auto">
-        <div className="flex flex-col items-center md:mx-auto md:h-1/2 md:w-3/4 md:flex-row md:items-center md:pt-16 pt-20">
+    <Carousel activeIndex={index} onSelect={handleSelect} interval={null} indicatorLabels={["tesefubefiuwebfwuibfet"]}>
+      <Carousel.Item className="flex flex-col items-center justify-center overflow-y-scroll text-[#ffffff] md:h-screen md:flex-col md:items-start lg:mx-auto">
+        <div className="flex flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-3/4 md:flex-row md:items-center md:pt-16">
           <Image
             src={gradPic}
             alt="about me pic"
@@ -25,8 +24,8 @@ export default function BootstrapCarousel() {
           <div className="flex w-full flex-col justify-start px-5 pt-4 align-middle dark:text-white md:w-3/4">
             <div className="flex w-full items-center justify-start pb-4">
               <div className="flex flex-col break-keep">
-                <h3 className="flex flex-col items-start justify-start sm:flex-row md:flex">
-                  Hello, my name is
+                <h3 className="flex flex-col items-start justify-start sm:flex sm:flex-row">
+                  Hello, my name is&nbsp;
                   <span className="bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text font-bold text-transparent md:pl-1">
                     John Andrew Kornegay
                   </span>
@@ -36,13 +35,12 @@ export default function BootstrapCarousel() {
                 </h2>
               </div>
             </div>
-            <div className="border-b-4 border-[#71fead] pb-4 dark:border-slate-200">
-              <p className="text-md font-normal tracking-wide">
-                A self-taught and highly motivated individual seeking an
-                internship opportunity to gain experience as as a front-end
-                developer.
-              </p>
-            </div>
+            <p className="text-md font-normal tracking-wide">
+              A self-taught and highly motivated individual seeking an
+              internship opportunity to gain experience as a front-end
+              developer.
+            </p>
+            <div className="bg-gradient-to-r from-[#71fead] to-[#437e60] p-0.5 dark:border-slate-200"></div>
             <div className="flex items-center pl-1 pt-4 font-thin">
               <CiLocationOn className="text-2xl text-[#71fead]" />
               <h3 className="my-auto pl-1 text-base font-light tracking-wide">
@@ -58,7 +56,7 @@ export default function BootstrapCarousel() {
           </div>
         </div>
         <div className="flex w-full flex-col pb-4 md:mx-auto md:w-2/3 md:items-center">
-          <div className="flex w-full flex-col justify-center md:items-center">
+          <div className="flex w-full flex-col justify-center px-2 md:items-start">
             <h1 className="-mb-4 p-4 text-2xl">About Me</h1>
             <p className="border-y-4 border-y-[#437e60] p-3 text-base font-light leading-relaxed dark:border-y-amber-500 md:text-lg">
               <span className="font-serif font-bold">
@@ -73,13 +71,13 @@ export default function BootstrapCarousel() {
         </div>
       </Carousel.Item>
       <Carousel.Item className="h-full w-full">
-        <section className="-m-1 flex h-full w-full flex-col overflow-scroll relative pt-12 md:pt-14 text-white md:flex md:h-screen md:p-10">
-          <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4  font-bold text-transparent md:pl-1">
+        <section className="relative -m-1 flex h-full w-full flex-col overflow-scroll pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
+          <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4 font-bold text-transparent md:pl-16">
             Job History
           </h1>
-          <div className="top-0 ml-2 h-full border-l-2 pl-[8.5px]">
+          <div className="ml-2 h-3/4 sm:h-full border-l-[1px] pl-[9px]">
             <ul className="-mt-5 list-item list-disc text-sm text-[#71fead]">
-              <li className="-mx-8 w-screen list-none">
+              <li className="-mx-8 w-screen">
                 <div className="flex h-1/2 w-full items-center md:mx-11">
                   <h3 className="text-base font-bold">Helpdesk Specialist</h3>
                   <span className="pt-2">
@@ -89,7 +87,7 @@ export default function BootstrapCarousel() {
                 <p className="-mt-3 flex justify-between font-light italic md:mx-11">
                   Maximus Federal - Remote; McAllen, TX
                 </p>
-                <ul className="-mx-4 w-full list-outside list-disc pb-2 text-slate-300 md:mx-7 md:w-3/4 md:text-base">
+                <ul className="-mx-4 w-full list-outside list-disc pb-2 space-y-2 text-slate-200 md:space-y-0.5 md:mx-7 md:w-3/4 md:text-base">
                   <li>
                     Troubleshoot official CDC software related issues for
                     healthcare professionals and the public.
@@ -111,22 +109,20 @@ export default function BootstrapCarousel() {
               </li>
             </ul>
             <ul className="list-item list-disc text-sm text-[#71fead]">
-              <li className="-mx-8 w-screen list-none ">
+              <li className="-mx-8 w-screen">
                 <div className="flex h-1/2 w-full items-center md:mx-11 ">
-                  <h3 className="text-base font-bold">
-                    Teaching Assistant
-                  </h3>
+                  <h3 className="text-base font-bold">Teaching Assistant</h3>
                   &nbsp;
                   <span className="pt-0.5 align-middle">
                     <p className="pt-1.5 text-slate-300">&nbsp;Spring 2021</p>
                   </span>
                 </div>
-                <p className="-mt-4 flex justify-between font-light italic md:mx-11">
+                <p className="-mt-4 flex justify-between font-light italic md:mx-11 pt-1">
                   University of Texas Rio Grande Valley - Remote; Edinburg, TX
                 </p>
               </li>
             </ul>
-            <ul className="-mx-4 w-full list-outside list-disc pb-2 text-sm text-slate-300 md:mx-7 md:w-3/4 md:text-base">
+            <ul className="-mx-4 space-y-2 w-full list-outside list-disc pb-2 text-sm md:space-y-0.5 text-slate-200 md:mx-7 md:w-3/4 md:text-base">
               <li>
                 Assisted undergraduate Chemistry students with course material,
                 holding weekly Q&A sessions
@@ -147,12 +143,12 @@ export default function BootstrapCarousel() {
                     </p>
                   </span>
                 </div>
-                <p className="-mt-4 flex justify-between font-light italic md:mx-11">
+                <p className="-mt-4 flex justify-between font-light italic md:mx-11 pt-1">
                   SAMES, Inc. - McAllen, TX
                 </p>
               </li>
             </ul>
-            <ul className="-mx-4 w-full list-outside list-disc pb-2 text-sm text-slate-300 md:mx-7 md:w-3/4 md:text-base">
+            <ul className="-mx-4 w-full list-outside list-disc pb-2 text-sm text-slate-200 md:space-y-0.5 md:mx-7 md:w-3/4 md:text-base space-y-2">
               <li>
                 Mapped out boundaries for businesses and residential homes using
                 GPS technology
@@ -173,12 +169,12 @@ export default function BootstrapCarousel() {
                     </p>
                   </span>
                 </div>
-                <p className="-mt-4 flex justify-between font-light italic md:mx-11">
+                <p className="-mt-4 flex pt-1 justify-between font-light italic md:mx-11">
                   Walgreens Pharmacy- Palmview, TX
                 </p>
               </li>
             </ul>
-            <ul className="-mx-4 w-full list-outside list-disc pb-2  text-sm text-slate-300 md:mx-7 md:w-3/4 md:text-base">
+            <ul className="-mx-4 w-full list-outside list-disc pb-4 md:space-y-0.5  text-sm text-slate-200 space-y-2 md:mx-7 md:w-3/4 md:text-base">
               <li>
                 Utilized propriety software to manage patient’s prescriptions,
                 resolve rejected insurance claims, and scheduled refills for
@@ -198,11 +194,11 @@ export default function BootstrapCarousel() {
         </section>
       </Carousel.Item>
       <Carousel.Item className="h-screen w-full">
-      <section className="-m-1 flex h-full w-full flex-col overflow-scroll relative pt-12 md:pt-14 text-white md:flex md:h-screen md:p-10">
-      <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4  font-bold text-transparent md:pl-1">
-          Projects
+        <section className="relative -m-1 flex h-full w-full flex-col overflow-scroll pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
+          <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4  font-bold text-transparent md:pl-1">
+            Projects
           </h1>
-      </section>
+        </section>
       </Carousel.Item>
     </Carousel>
   );
