@@ -90,8 +90,6 @@ const CommentFeed = () => {
 };
 
 const Home: NextPage = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [pageView, setPageView] = useState<boolean>(true);
   // const [isShown, setIsShown] = useState<boolean>(true)
   api.comments.getAll.useQuery();
   const { isLoaded: userLoaded, isSignedIn } = useUser();
@@ -99,18 +97,12 @@ const Home: NextPage = () => {
   if (!userLoaded) return <div />;
 
   return (
-    <div className="bg-[#00213d]">
+    <>
       <Head>
         <title>Resume</title>
       </Head>
-      <Header
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-          setPageView={setPageView}
-          pageView={pageView}
-        />
       <BootstrapCarousel />
-        {/* {pageView && (
+      {/* {pageView && (
           <main
             className={`static flex h-full w-full flex-col overflow-scroll text-black ${
               darkMode ? "dark" : ""
@@ -363,7 +355,7 @@ const Home: NextPage = () => {
       </>
 
       {!pageView && <Blog darkMode={darkMode} />} */}
-    </div>
+    </>
   );
 };
 
