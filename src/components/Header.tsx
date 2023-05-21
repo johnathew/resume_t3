@@ -48,29 +48,29 @@ const Header = ({
           Blog
         </button>
       </div>
-      <nav className="sm:flex sm:justify-between sm:items-center">
-        <ul className="my-auto flex w-1/4 items-center space-x-1 pr-7 text-[10px] sm:space-x-4 sm:text-base sm:font-medium sm:tracking-wide">
+      <nav className="flex">
+        <ul className="my-auto flex w-1/4 space-x-1 pr-7 items-center text-[10px] sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
           <li
             id="About"
-            className="underline-offset-2 hover:cursor-pointer hover:underline enabled:text-[#71fead]"
+            className="underline-offset-2 hover:cursor-pointer hover:underline hover:text-[#71fead]"
             onClick={(e) => handleClick(e)}
           >
             About
           </li>{" "}
           <span>|</span>
-          <div className="mx-1 w-auto items-center flex gap-2 sm:gap-2">
+          <div className="mx-1 w-auto items-center flex gap-2 sm:gap-2 break-normal">
             <li
               id="Job History"
-              className="ml-1 w-auto underline-offset-2 hover:cursor-pointer hover:underline"
+              className="ml-1 w-auto underline-offset-2 hover:cursor-pointer hover:underline hover:text-[#71fead]"
               onClick={(e) => handleClick(e)}
             >
-              Job History
+              Job&nbsp;History
             </li>
             <span>|</span>
           </div>
           <li
             id="Projects"
-            className="underline-offset-2  hover:cursor-pointer hover:underline"
+            className="underline-offset-2  hover:cursor-pointer hover:underline hover:text-[#71fead]"
             onClick={(e) => handleClick(e)}
           >
             Projects
