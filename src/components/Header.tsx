@@ -12,7 +12,7 @@ type HeaderTypes = {
   pageView: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
   setPageView: Dispatch<SetStateAction<boolean>>;
-  handleClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
+  handleClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 };
 
 const Header = ({
@@ -20,15 +20,15 @@ const Header = ({
   setDarkMode,
   setPageView,
   pageView,
-  handleClick
+  handleClick,
 }: HeaderTypes) => {
   return (
     <header
-      className={`flex justify-center ${
+      className={`flex justify-start sm:justify-center ${
         darkMode ? "dark" : ""
-      } md:text-md absolute z-50 h-auto w-full items-center bg-[#00213d] p-1 font-serif text-white drop-shadow-2xl sm:justify-around md:w-full`}
+      } md:text-md absolute z-50 h-fit w-full items-center bg-[#00213d] p-1 text-white drop-shadow-2xl sm:justify-around md:w-full`}
     >
-      <div className="flex items-center space-x-1 sm:space-x-1">
+      <div className="flex items-center gap-1 sm:space-x-1 md:space-x-1">
         <button
           className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-black ${
             pageView ? "border-2 border-black" : ""
@@ -41,46 +41,68 @@ const Header = ({
         <button
           className={`md:align-center w-auto rounded-lg bg-[#437e60] p-1 ${
             !pageView ? "border-2 border-black" : ""
-          } drop-shadow-md `}
+          } text-black drop-shadow-md `}
           onClick={() => setPageView((prev) => !prev)}
           disabled={!pageView}
         >
           Blog
         </button>
       </div>
-      <nav>
-        <ul className="-mx-6 my-auto flex items-center space-x-1 text-[10px] sm:space-x-4 sm:text-base sm:font-medium sm:tracking-wide">
-          <li id="About" className="underline-offset-2 hover:underline enabled:text-[#71fead]" onClick={(e) => handleClick(e) }>About</li>{" "}
+      <nav className="sm:flex sm:justify-between sm:items-center">
+        <ul className="my-auto flex w-1/4 items-center space-x-1 pr-7 text-[10px] sm:space-x-4 sm:text-base sm:font-medium sm:tracking-wide">
+          <li
+            id="About"
+            className="underline-offset-2 hover:cursor-pointer hover:underline enabled:text-[#71fead]"
+            onClick={(e) => handleClick(e)}
+          >
+            About
+          </li>{" "}
           <span>|</span>
-          <div className="flex gap-2 items-center">
-            <li id="Job History" className="underline-offset-2 hover:underline ml-1 w-auto" onClick={(e) => handleClick(e)} >Job History</li>
+          <div className="mx-1 w-auto items-center flex gap-2 sm:gap-2">
+            <li
+              id="Job History"
+              className="ml-1 w-auto underline-offset-2 hover:cursor-pointer hover:underline"
+              onClick={(e) => handleClick(e)}
+            >
+              Job History
+            </li>
             <span>|</span>
           </div>
-          <li id="Projects" className="underline-offset-2  hover:underline" onClick={(e) => handleClick(e)}>Projects</li>
+          <li
+            id="Projects"
+            className="underline-offset-2  hover:cursor-pointer hover:underline"
+            onClick={(e) => handleClick(e)}
+          >
+            Projects
+          </li>
         </ul>
       </nav>
-      <div className="ml-2 flex h-10 w-auto items-center space-x-1 rounded-lg p-4 text-xl">
-        <Link href="https://www.instagram.com/johnathew_k/">
-          <AiOutlineInstagram className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
-        </Link>
-        <Link href="https://github.com/johnathew">
-          <FiGithub className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
-        </Link>
-        <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/">
-          <CiLinkedin className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
-        </Link>
-        {darkMode && (
-          <IoIosSunny
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="transform rounded-lg text-[#71fead] duration-500 hover:cursor-pointer hover:bg-orange-400"
-          />
-        )}
-        {!darkMode && (
-          <BsSun
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="transform rounded-lg text-[#71fead] duration-500 hover:cursor-pointer hover:bg-orange-400"
-          />
-        )}
+      <div className="flex h-auto w-auto items-center rounded-lg text-xl sm:px-1">
+        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row md:text-2xl">
+          <Link href="https://www.instagram.com/johnathew_k/">
+            <AiOutlineInstagram className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
+          </Link>
+          <Link href="https://github.com/johnathew">
+            <FiGithub className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
+          </Link>
+        </div>
+        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row  md:text-2xl">
+          <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/">
+            <CiLinkedin className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
+          </Link>
+          {darkMode && (
+            <IoIosSunny
+              onClick={() => setDarkMode((prev) => !prev)}
+              className="transform rounded-lg text-[#71fead] duration-500 hover:cursor-pointer hover:bg-orange-400"
+            />
+          )}
+          {!darkMode && (
+            <BsSun
+              onClick={() => setDarkMode((prev) => !prev)}
+              className="transform rounded-lg text-[#71fead] duration-500 hover:cursor-pointer hover:bg-orange-400"
+            />
+          )}
+        </div>
       </div>
     </header>
   );

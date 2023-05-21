@@ -46,7 +46,7 @@ export default function BootstrapCarousel() {
         activeIndex={index}
         onSelect={handleSelect}
         interval={null}
-        className="h-full w-full bg-[#00213d] font-serif"
+        className="h-full w-full bg-[#00213d] "
       >
         <Carousel.Item
           className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-col md:items-start lg:mx-auto"
@@ -108,11 +108,11 @@ export default function BootstrapCarousel() {
           </div>
         </Carousel.Item>
         <Carousel.Item className="h-full w-full" id="Job History">
-          <section className="relative flex h-full w-full flex-col pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
+          <section className="relative flex h-full w-full flex-col overflow-y-scroll pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
             <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4 font-bold text-transparent md:pl-16">
               Job History
             </h1>
-            <div className="ml-2 h-3/4 border-l-[1px] pl-[9px] sm:h-full">
+            <div className="ml-2 h-3/4 border-l-[2px] pl-[9px] md:pl-2 sm:h-full drop-shadow-lg">
               <ul className="-mt-5 list-item list-disc text-sm text-[#71fead]">
                 <li className="-mx-8 w-screen">
                   <div className="flex h-1/2 w-full items-center md:mx-11">
