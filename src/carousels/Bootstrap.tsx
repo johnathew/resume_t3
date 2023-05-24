@@ -49,10 +49,10 @@ export default function BootstrapCarousel() {
         className="h-full w-full bg-[#00213d] "
       >
         <Carousel.Item
-          className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-col md:items-start lg:mx-auto"
+          className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
           id="About"
         >
-          <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-3/4 md:flex-row md:items-center md:pt-16">
+          <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-1/2 md:flex-row md:items-center md:pt-16">
             <Image
               src={gradPic}
               alt="about me pic"
