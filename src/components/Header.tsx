@@ -48,8 +48,8 @@ const Header = ({
           Blog
         </button>
       </div>
-      <nav className="flex">
-        <ul className="my-auto flex w-1/4 space-x-1 pr-7 items-center text-[10px] sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
+      <nav className="flex text-[10px]">
+        <ul className="my-auto flex w-1/4 space-x-1 pr-7 items-center sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
           <li
             id="About"
             className="underline-offset-2 hover:cursor-pointer hover:underline hover:text-[#71fead]"
