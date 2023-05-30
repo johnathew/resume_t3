@@ -24,7 +24,7 @@ const Header = ({
 }: HeaderTypes) => {
   return (
     <header
-      className={`flex justify-start sm:justify-center ${
+      className={`flex md:justify-around justify-around ${
         darkMode ? "dark" : ""
       } md:text-md absolute z-50 h-fit w-screen items-center bg-[#00213d] p-2 text-white drop-shadow-2xl sm:justify-around md:w-full`}
     >
@@ -48,8 +48,8 @@ const Header = ({
           Blog
         </button>
       </div>
-      <nav className="flex -ml-2 md:items-center text-[10px] md:mr-0 w-[55%] md:justify-center md:ml-0">
-        <ul className="my-auto flex w-1/4 space-x-1 pr-7 sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
+      <nav className="flex -ml-2 md:items-center text-[10px] md:mr-0 md:w-auto md:ml-0">
+        <ul className="my-auto flex w-1/4 space-x-1 mr-3 sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
           <li
             id="About"
             className="underline-offset-2 hover:cursor-pointer hover:underline hover:text-[#71fead]"
@@ -77,7 +77,7 @@ const Header = ({
           </li>
         </ul>
       </nav>
-      <div className="flex h-auto relative w-auto md:mr-0 items-center rounded-lg text-xl sm:px-1 md:space-x-2">
+      <div className="flex h-auto relative w-auto md:mr-0 rounded-lg text-xl sm:px-1 md:space-x-2">
         <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row md:text-2xl md:space-x-2">
           <Link href="https://www.instagram.com/johnathew_k/">
             <AiOutlineInstagram className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
