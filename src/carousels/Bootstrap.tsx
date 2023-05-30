@@ -61,9 +61,9 @@ export default function BootstrapCarousel() {
             <div className="flex w-full flex-col justify-start px-5 pt-4 align-middle dark:text-white md:w-3/4">
               <div className="flex w-full items-center justify-start pb-4">
                 <div className="flex flex-col">
-                  <h3 className="flex flex-col items-start justify-start sm:flex-col md:flex-col lg:flex-row ">
+                  <h3 className="flex flex-col items-start justify-start sm:flex-col md:flex-col">
                     Hello, my name is&nbsp;
-                    <span className="bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text font-bold text-transparent md:pl-1">
+                    <span className="bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text font-bold text-transparent">
                       John Andrew Kornegay
                     </span>
                   </h3>
@@ -107,7 +107,7 @@ export default function BootstrapCarousel() {
             </div>
           </div>
         </Carousel.Item>
-        <Carousel.Item className="md:h-screen" id="Job History">
+        <Carousel.Item className="md:h-screen overflow-scroll" id="Job History">
           <section className="relative text-gray-600 flex flex-col items-center">
             <h1 className="pt-20 -mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pl-4 font-bold text-transparent">
               Job History
