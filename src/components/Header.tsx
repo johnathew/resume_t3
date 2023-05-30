@@ -26,9 +26,9 @@ const Header = ({
     <header
       className={`flex justify-start sm:justify-center ${
         darkMode ? "dark" : ""
-      } md:text-md absolute z-50 h-fit w-full items-center bg-[#00213d] p-1 text-white drop-shadow-2xl sm:justify-around md:w-full`}
+      } md:text-md absolute z-50 h-fit w-screen items-center bg-[#00213d] p-2 text-white drop-shadow-2xl sm:justify-around md:w-full`}
     >
-      <div className="flex items-center gap-1 sm:space-x-1 md:space-x-1">
+      <div className="flex items-center gap-1 sm:space-x-1 md:space-x-1 md:justify-center">
         <button
           className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-black ${
             pageView ? "border-2 border-black" : ""
@@ -48,8 +48,8 @@ const Header = ({
           Blog
         </button>
       </div>
-      <nav className="flex text-[10px]">
-        <ul className="my-auto flex w-1/4 space-x-1 pr-7 items-center sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
+      <nav className="flex -ml-2 md:items-center text-[10px] md:mr-0 w-[55%] md:justify-center md:ml-0">
+        <ul className="my-auto flex w-1/4 space-x-1 pr-7 sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
           <li
             id="About"
             className="underline-offset-2 hover:cursor-pointer hover:underline hover:text-[#71fead]"
@@ -77,8 +77,8 @@ const Header = ({
           </li>
         </ul>
       </nav>
-      <div className="flex h-auto w-auto items-center rounded-lg text-xl sm:px-1">
-        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row md:text-2xl">
+      <div className="flex h-auto relative w-auto md:mr-0 items-center rounded-lg text-xl sm:px-1 md:space-x-2">
+        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row md:text-2xl md:space-x-2">
           <Link href="https://www.instagram.com/johnathew_k/">
             <AiOutlineInstagram className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
           </Link>
@@ -86,7 +86,7 @@ const Header = ({
             <FiGithub className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
           </Link>
         </div>
-        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row  md:text-2xl">
+        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row  md:text-2xl md:space-x-2">
           <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/">
             <CiLinkedin className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
           </Link>

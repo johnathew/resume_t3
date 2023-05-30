@@ -46,19 +46,19 @@ export default function BootstrapCarousel() {
         activeIndex={index}
         onSelect={handleSelect}
         interval={null}
-        className="h-full w-full bg-[#00213d] "
+        className="h-full w-full bg-[#00213d]"
       >
         <Carousel.Item
-          className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
+className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
           id="About"
         >
-          <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-1/2 md:flex-row md:items-center md:pt-16">
+  <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:items-center md:pt-16">
             <Image
               src={gradPic}
               alt="about me pic"
               className="h-3/4 w-1/2 rounded-full pt-1 drop-shadow-sm md:h-auto md:w-72"
             />
-            <div className="flex w-full flex-col justify-start px-5 pt-4 align-middle dark:text-white md:w-3/4">
+            <div className="flex w-full flex-col justify-start px-4 md:px-0 pt-4 align-middle dark:text-white md:w-3/4">
               <div className="flex w-full items-center justify-start pb-4">
                 <div className="flex flex-col">
                   <h3 className="flex flex-col items-start justify-start sm:flex-col md:flex-col">
