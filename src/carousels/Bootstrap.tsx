@@ -52,17 +52,19 @@ export default function BootstrapCarousel() {
           className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
           id="About"
         >
-          <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:items-center md:justify-center md:px-10 md:pt-16 lg:flex-row">
-         
+          <h1 className="flex justify-center bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent md:-mb-10">
+            About
+          </h1>
+          <section className="flex h-full w-full flex-col items-center pt-3 md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:px-10 lg:flex-row">
             <Image
               src={gradPic}
               alt="about me pic"
-              className="h-3/4 w-1/2 -mb-2 rounded-full md:p-[6px] m-10 md:mr-2 drop-shadow-sm md:h-auto md:w-80 md:mb-0 border-2 border-double border-[#71fead]"
+              className="-mb-2 h-3/4 w-1/2 rounded-full border-2 border-double border-[#71fead] drop-shadow-sm md:mb-0 md:mr-2 md:h-auto md:w-80 md:p-[6px]"
             />
-            <div className="flex h-auto w-full flex-col justify-start px-4 pt-4 align-middle dark:text-white md:h-auto md:w-full md:mt-10">
+            <div className="flex h-auto w-full flex-col justify-start px-4 pt-4 align-middle dark:text-white  md:h-auto md:w-full">
               <div className="flex w-full items-center justify-start pb-4">
-                <div className="flex flex-col">
-                  <h3 className="flex flex-col items-start justify-start sm:flex-col md:inline-flex">
+                <div className="flex flex-col md:mt-0 mt-2">
+                  <h3 className="items-start justify-start sm:flex-row">
                     Hello, my name is&nbsp;
                     <span className="bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text font-bold text-transparent">
                       John Andrew Kornegay
@@ -92,10 +94,9 @@ export default function BootstrapCarousel() {
                 </h3>
               </div>
             </div>
-          </div>
+          </section>
           <div className="flex w-full flex-col pb-4 md:mx-auto md:w-2/3 md:items-center">
             <div className="flex w-full flex-col justify-center px-2 md:items-start">
-              <h1 className="-mb-4 p-4 text-2xl">About Me</h1>
               <p className="border-y-4 border-y-[#437e60] p-3 text-base font-light leading-relaxed dark:border-y-amber-500 md:text-lg">
                 <span className="font-serif font-bold">
                   A 2016 graduate from Texas A&M University
@@ -108,9 +109,12 @@ export default function BootstrapCarousel() {
             </div>
           </div>
         </Carousel.Item>
-        <Carousel.Item className="overflow-scroll md:h-screen" id="Job History">
+        <Carousel.Item
+          className="h-screen overflow-scroll md:h-screen"
+          id="Job History"
+        >
           <section className="relative flex flex-col items-center text-gray-600">
-            <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pl-4 pt-20 font-bold text-transparent">
+            <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
               Job History
             </h1>
             <div className="container flex flex-wrap">
@@ -271,9 +275,12 @@ export default function BootstrapCarousel() {
             </div>
           </section>
         </Carousel.Item>
-        <Carousel.Item className="overflow-scroll md:h-screen" id="Projects">
+        <Carousel.Item
+          className="h-screen overflow-scroll md:h-screen"
+          id="Projects"
+        >
           <section className="relative flex flex-col items-center text-gray-600">
-            <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pl-4 pt-20 font-bold text-transparent">
+            <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
               Projects
             </h1>
           </section>
