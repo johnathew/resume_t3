@@ -49,19 +49,20 @@ export default function BootstrapCarousel() {
         className="h-full w-full bg-[#00213d]"
       >
         <Carousel.Item
-className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
+          className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
           id="About"
         >
-  <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:items-center md:pt-16">
+          <div className="flex h-full w-full flex-col items-center pt-20 md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:items-center md:justify-center md:px-10 md:pt-16 lg:flex-row">
+         
             <Image
               src={gradPic}
               alt="about me pic"
-              className="h-3/4 w-1/2 rounded-full pt-1 drop-shadow-sm md:h-auto md:w-72"
+              className="h-3/4 w-1/2 -mb-2 rounded-full md:p-[6px] m-10 md:mr-2 drop-shadow-sm md:h-auto md:w-80 md:mb-0 border-2 border-double border-[#71fead]"
             />
-            <div className="flex w-full flex-col justify-start px-4 md:px-0 pt-4 align-middle dark:text-white md:w-3/4">
+            <div className="flex h-auto w-full flex-col justify-start px-4 pt-4 align-middle dark:text-white md:h-auto md:w-full md:mt-10">
               <div className="flex w-full items-center justify-start pb-4">
                 <div className="flex flex-col">
-                  <h3 className="flex flex-col items-start justify-start sm:flex-col md:flex-col">
+                  <h3 className="flex flex-col items-start justify-start sm:flex-col md:inline-flex">
                     Hello, my name is&nbsp;
                     <span className="bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text font-bold text-transparent">
                       John Andrew Kornegay
@@ -107,21 +108,21 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
             </div>
           </div>
         </Carousel.Item>
-        <Carousel.Item className="md:h-screen overflow-scroll" id="Job History">
-          <section className="relative text-gray-600 flex flex-col items-center">
-            <h1 className="pt-20 -mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pl-4 font-bold text-transparent">
+        <Carousel.Item className="overflow-scroll md:h-screen" id="Job History">
+          <section className="relative flex flex-col items-center text-gray-600">
+            <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pl-4 pt-20 font-bold text-transparent">
               Job History
             </h1>
             <div className="container flex flex-wrap">
               <div className="relative flex pb-2 pt-10 sm:items-center md:w-2/3">
-                <div className="absolute -inset-2 flex h-full mt-14 w-6 items-center justify-center">
+                <div className="absolute -inset-2 mt-14 flex h-full w-6 items-center justify-center">
                   <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
                 </div>
                 <div className="relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full border-2 bg-[#71fead] text-sm font-medium text-white sm:mt-0"></div>
                 <ul className="list-none text-sm text-[#71fead]">
                   <li className="-mx-8 w-screen">
                     <div className="flex h-1/2 w-full items-center md:mx-11">
-                      <h3 className="text-base font-bold mx-2">
+                      <h3 className="mx-2 text-base font-bold">
                         Helpdesk Specialist
                       </h3>
                       <span className="pt-2">
@@ -130,7 +131,7 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                         </p>
                       </span>
                     </div>
-                    <p className="-mt-3 flex mx-2 justify-between font-light italic md:pl-11">
+                    <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                       Maximus Federal - Remote; McAllen, TX
                     </p>
                     <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
@@ -163,7 +164,7 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                 <ul className="list-none text-sm text-[#71fead]">
                   <li className="-mx-8 w-screen">
                     <div className="flex h-1/2 w-full items-center md:mx-11">
-                      <h3 className="text-base font-bold mx-2">
+                      <h3 className="mx-2 text-base font-bold">
                         Teaching Assistant
                       </h3>
                       <span className="pt-2">
@@ -172,7 +173,7 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                         </p>
                       </span>
                     </div>
-                    <p className="-mt-3 mx-2 flex justify-between font-light italic md:pl-11">
+                    <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                       University of Texas Rio Grande Valley - Remote; Edinburg,
                       TX
                     </p>
@@ -197,7 +198,9 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                 <ul className="list-none text-sm text-[#71fead]">
                   <li className="-mx-8 w-screen">
                     <div className="flex h-1/2 w-full items-center md:mx-11">
-                      <h3 className="text-base font-bold mx-2">Survey Assistant</h3>
+                      <h3 className="mx-2 text-base font-bold">
+                        Survey Assistant
+                      </h3>
                       &nbsp;
                       <span className="pt-2">
                         <p className="text-slate-300">
@@ -205,7 +208,7 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                         </p>
                       </span>
                     </div>
-                    <p className="-mt-3 flex mx-2 justify-between font-light italic md:pl-11">
+                    <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                       SAMES, Inc. - McAllen, TX
                     </p>
                     <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
@@ -217,7 +220,10 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                         Provided measurements and layouts for construction
                         projects in both metropolitan and rural areas
                       </li>
-                      <li>Fullfilled boundary surveys requested by homeowners and businesses for both/either refinancing purposes or design planning </li>
+                      <li>
+                        Fullfilled boundary surveys requested by homeowners and
+                        businesses for refinancing or design planning{" "}
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -230,7 +236,9 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                 <ul className="list-none text-sm text-[#71fead]">
                   <li className="-mx-8 w-screen">
                     <div className="flex h-1/2 w-full items-center md:mx-11">
-                      <h3 className="text-base font-bold mx-2">Pharmacy Technician</h3>
+                      <h3 className="mx-2 text-base font-bold">
+                        Pharmacy Technician
+                      </h3>
                       &nbsp;
                       <span className="pt-2">
                         <p className="text-slate-300">
@@ -238,23 +246,23 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                         </p>
                       </span>
                     </div>
-                    <p className="-mt-3 flex justify-between font-light italic mx-2 md:pl-11">
-                    Walgreens Pharmacy- Palmview, TX
+                    <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
+                      Walgreens Pharmacy- Palmview, TX
                     </p>
                     <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-6 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
                       <li>
-                      Utilized propriety software to manage patient’s prescriptions,
-                  resolve rejected insurance claims, and scheduled refills for
-                  medication
+                        Utilized propriety software to manage patient’s
+                        prescriptions, resolve rejected insurance claims, and
+                        scheduled refills for medication
                       </li>
                       <li>
-                      Maintained strong attention to detail, making sure all
-                  patients received the correct prescription(s); professionally
-                  handled confidential patient information.
+                        Maintained strong attention to detail, making sure all
+                        patients received the correct prescription(s);
+                        professionally handled confidential patient information.
                       </li>
                       <li>
-                      Resolved any hardware related issues that inhibited normal
-                  pharmacy operations.
+                        Resolved any hardware related issues that inhibited
+                        normal pharmacy operations.
                       </li>
                     </ul>
                   </li>
@@ -263,9 +271,9 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
             </div>
           </section>
         </Carousel.Item>
-        <Carousel.Item className="h-screen w-full" id="Projects">
-          <section className="relative -m-1 flex h-full w-full flex-col overflow-scroll pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
-            <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4  font-bold text-transparent md:pl-1">
+        <Carousel.Item className="overflow-scroll md:h-screen" id="Projects">
+          <section className="relative flex flex-col items-center text-gray-600">
+            <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pl-4 pt-20 font-bold text-transparent">
               Projects
             </h1>
           </section>
@@ -318,8 +326,8 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
 </ul> */
 }
 
-
-{/* <section className="container flex h-full w-full flex-col overflow-scroll pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
+{
+  /* <section className="container flex h-full w-full flex-col overflow-scroll pt-12 text-white md:flex md:h-screen md:p-10 md:pt-14">
             <h1 className="mr-2 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text py-4 pl-4 font-bold text-transparent md:pl-16">
               Job History
             </h1>
@@ -442,4 +450,5 @@ className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen 
                 </li>
               </ul>
             </div>
-          </section> */}
+          </section> */
+}

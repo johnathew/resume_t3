@@ -30,7 +30,7 @@ const Header = ({
     >
       <div className="flex items-center gap-1 sm:space-x-1 md:space-x-1 md:justify-center">
         <button
-          className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-black ${
+          className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-base md:text-lg text-black ${
             pageView ? "border-2 border-black" : ""
           } drop-shadow-md `}
           onClick={() => setPageView((prev) => !prev)}
@@ -39,7 +39,7 @@ const Header = ({
           Resume
         </button>
         <button
-          className={`md:align-center w-auto rounded-lg bg-[#437e60] p-1 ${
+          className={`md:align-center w-auto rounded-lg bg-[#437e60] p-1  text-base md:text-lg ${
             !pageView ? "border-2 border-black" : ""
           } text-black drop-shadow-md `}
           onClick={() => setPageView((prev) => !prev)}
