@@ -6,6 +6,7 @@ import gradPic from "public/gradPic.jpeg";
 import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineMail } from "react-icons/hi";
 import Header from "~/components/Header";
+import ProjectCard from "~/components/ProjectCard";
 
 export default function BootstrapCarousel() {
   const [index, setIndex] = useState(0);
@@ -55,16 +56,16 @@ export default function BootstrapCarousel() {
           <h1 className="flex justify-center bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent md:-mb-10">
             About
           </h1>
-          <section className="flex h-full w-full flex-col items-center pt-3 md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:px-10 lg:flex-row">
+          <section className="flex h-full w-full flex-col items-center md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:px-10 lg:flex-row">
             <Image
               src={gradPic}
               alt="about me pic"
-              className="-mb-2 h-3/4 w-1/2 rounded-full border-2 border-double border-[#71fead] drop-shadow-sm md:mb-0 md:mr-2 md:h-auto md:w-80 md:p-[6px]"
+              className="-mb-2 h-3/4 w-1/2 rounded-full border-2 border-double border-[#71fead] drop-shadow-sm md:mb-0 md:mr-2 md:h-auto md:w-60 md:p-[2px]"
             />
             <div className="flex h-auto w-full flex-col justify-start px-4 pt-4 align-middle dark:text-white  md:h-auto md:w-full">
               <div className="flex w-full items-center justify-start pb-4">
                 <div className="flex flex-col md:mt-0 mt-2">
-                  <h3 className="items-start justify-start sm:flex-row">
+                  <h3 className="items-start justify-center sm:flex-row">
                     Hello, my name is&nbsp;
                     <span className="bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text font-bold text-transparent">
                       John Andrew Kornegay
@@ -283,6 +284,12 @@ export default function BootstrapCarousel() {
             <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
               Projects
             </h1>
+            <div className="mt-16 gap-4 p-10 w-full md:w-full md:h-auto md:mt-20 md:py-10 md:px-64 grid gap-y-10 grid-cols-2 grid-rows-2  rounded-lg place-items-center">
+            <ProjectCard projectName="pokedex" languages="Typescript, React, Tailwind" description="pokedex made with Pokemon-API" />
+            <ProjectCard projectName="GitHub Repo Search" languages="Typescript, React, Tailwind" description="Search GitHub repositories" />
+            <ProjectCard projectName="Memory Game" languages="React, Javascript, Tailwind" description="Memory Card game" />
+            <ProjectCard projectName="Resume" languages="Typescript, React, Tailwind, Next JS" description="Code used to create this site" />
+            </div>
           </section>
         </Carousel.Item>
       </Carousel>

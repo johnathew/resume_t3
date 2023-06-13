@@ -26,20 +26,20 @@ const Header = ({
     <header
       className={`flex md:justify-around justify-around ${
         darkMode ? "dark" : ""
-      } md:text-md absolute z-50 h-fit w-screen items-center bg-[#00213d] p-2 text-white drop-shadow-2xl sm:justify-around md:w-full`}
+      } md:text-md absolute z-50 h-fit w-screen items-center bg-[#00213d] p-2 text-white drop-shadow-2xl sm:justify-around md:w-full border-b-[1px] border-black`}
     >
       <div className="flex items-center gap-1 sm:space-x-1 md:space-x-1 md:justify-center">
         <button
-          className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-base md:text-lg text-black ${
+          className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-sm md:text-lg text-black ${
             pageView ? "border-2 border-black" : ""
-          } drop-shadow-md `}
+          } drop-shadow-md`}
           onClick={() => setPageView((prev) => !prev)}
           disabled={pageView}
         >
           Resume
         </button>
         <button
-          className={`md:align-center w-auto rounded-lg bg-[#437e60] p-1  text-base md:text-lg ${
+          className={`md:align-center w-auto rounded-lg bg-[#437e60] p-1  text-sm md:text-lg ${
             !pageView ? "border-2 border-black" : ""
           } text-black drop-shadow-md `}
           onClick={() => setPageView((prev) => !prev)}
@@ -48,7 +48,7 @@ const Header = ({
           Blog
         </button>
       </div>
-      <nav className="flex -ml-2 md:items-center text-[10px] md:mr-0 md:w-auto md:ml-0">
+      <nav className="flex -ml-4 md:items-center text-[11px] md:mr-0 md:w-auto md:ml-0">
         <ul className="my-auto flex w-1/4 space-x-1 mr-3 sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
           <li
             id="About"
