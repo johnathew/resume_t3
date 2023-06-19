@@ -1,5 +1,5 @@
 import clerkClient from "@clerk/clerk-sdk-node";
-import { User } from "@clerk/nextjs/dist/types/server/clerkClient";
+import type { User } from "@clerk/nextjs/dist/types/server/clerkClient";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
