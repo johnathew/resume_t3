@@ -10,7 +10,7 @@ const Projects = () => {
       </h1>
       <div className="mt-10 w-full justify-center rounded-lg p-5 md:mt-20 md:grid md:h-full md:w-4/5 md:grid-cols-2 md:gap-10">
         <Link href="https://poetic-figolla-62a3eb.netlify.app/" legacyBehavior>
-          <a target="_blank" className="m-0 h-auto w-auto p-0 no-underline">
+          <a target="_blank" className="m-0 h-auto w-auto no-underline">
             <ProjectCard
               projectName="Pokedex"
               languages="Typescript, React, Tailwind"
