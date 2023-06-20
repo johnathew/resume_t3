@@ -8,7 +8,7 @@ const Projects = () => {
       <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
         Projects
       </h1>
-      <div className="mt-10 w-full justify-center rounded-lg p-5 md:mt-14 md:grid md:h-full md:w-4/5 md:grid-cols-2 md:gap-10">
+      <div className="mt-14 flex flex-col gap-2 mb-10 md:mb-0 w-full justify-center rounded-lg px-4 md:mt-10 md:pt-5 md:grid md:h-full md:w-2/3 md:grid-cols-2 md:gap-2 md:flex-none">
         <Link href="https://poetic-figolla-62a3eb.netlify.app/" legacyBehavior>
           <a target="_blank" className="m-0 h-auto w-auto no-underline">
             <ProjectCard

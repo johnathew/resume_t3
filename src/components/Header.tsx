@@ -48,7 +48,7 @@ const Header = ({
           Blog
         </button>
       </div>
-      <nav className="-ml-4 flex text-[11px] md:ml-0 md:mr-0 md:w-auto md:items-center">
+      <nav className="-ml-4 flex text-[12px] md:ml-0 md:mr-0 md:w-auto md:items-center">
         <ul className="my-auto mr-3 flex w-1/4 space-x-1 sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
           <li
             id="About"

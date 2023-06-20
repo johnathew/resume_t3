@@ -6,11 +6,11 @@ import { HiOutlineMail } from "react-icons/hi";
 
 const About = () => {
   return (
-    <>
+    <div className="text-white">
       <h1 className="flex justify-center bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent md:-mb-10">
         About
       </h1>
-      <section className="flex text-sm h-full w-full flex-col items-center md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:px-10 lg:flex-row">
+      <section className="flex text-sm md:pt-10 h-full w-full flex-col items-center md:mx-auto md:h-1/2 md:w-2/3 md:flex-row md:px-10 lg:flex-row">
         <Image
           src={gradPic}
           alt="about me pic"
@@ -62,7 +62,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -98,7 +98,7 @@ const JobHistory = () => {
               <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
                 <li>
                   Mapped out boundaries for businesses and residential homes
-                  using satellite GPS technology
+                  using GPS technology
                 </li>
                 <li>
                   Provided measurements and layouts for construction projects in

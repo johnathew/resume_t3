@@ -50,7 +50,7 @@ export default function BootstrapCarousel() {
         className="h-full w-full bg-[#00213d]"
       >
         <Carousel.Item
-          className="flex flex-col items-center justify-center text-[#ffffff] md:h-screen md:flex-row md:items-start lg:mx-auto"
+          className="h-screen overflow-scroll md:h-screen"
           id="About"
         >
           <About />
