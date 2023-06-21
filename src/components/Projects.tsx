@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <section className="relative flex flex-col items-center text-gray-600">
+    <section className="relative flex flex-col items-center">
       <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
         Projects
       </h1>
