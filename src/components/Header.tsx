@@ -9,97 +9,68 @@ import { IoIosSunny } from "react-icons/io";
 
 type HeaderTypes = {
   darkMode: boolean;
-  pageView: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
-  setPageView: Dispatch<SetStateAction<boolean>>;
   handleClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 };
 
-const Header = ({
-  darkMode,
-  setDarkMode,
-  setPageView,
-  pageView,
-  handleClick,
-}: HeaderTypes) => {
+const Header = ({ darkMode, setDarkMode, handleClick }: HeaderTypes) => {
   return (
-    <header
-      className={`flex justify-around md:justify-around ${
-        darkMode ? "dark" : ""
-      } md:text-md absolute z-50 h-fit w-screen items-center border-b-[1px] border-black bg-[#00213d] p-2 text-white drop-shadow-2xl sm:justify-around md:w-full`}
-    >
-      <div className="flex items-center gap-1 sm:space-x-1 md:justify-center md:space-x-1">
-        <button
-          className={`md:align-center h-auto rounded-lg bg-[#71fead] p-1 text-sm text-black md:text-lg ${
-            pageView ? "border-2 border-black" : ""
-          } drop-shadow-md`}
-          onClick={() => setPageView((prev) => !prev)}
-          disabled={pageView}
-        >
+    <header className="md:text-md absolute  z-50 flex h-fit w-screen items-center justify-around border-b-[1px] border-black bg-[#f1f4eb] p-2 drop-shadow-2xl dark:bg-[#00213d] sm:justify-evenly md:w-full">
+      <div className="flex items-center gap-1 sm:space-x-1 md:justify-center md:space-x-1 pr-3">
+        <div className="md:align-center h-auto rounded-lg border-2 border-slate-700 bg-[#324958] px-3 py-1 text-sm text-[#f3f5f0] shadow-lg dark:bg-[#71fead] dark:text-black md:text-lg">
           Resume
-        </button>
-        <button
-          className={`md:align-center w-auto rounded-lg bg-[#437e60] p-1  text-sm md:text-lg ${
-            !pageView ? "border-2 border-black" : ""
-          } text-black drop-shadow-md `}
-          onClick={() => setPageView((prev) => !prev)}
-          disabled={!pageView}
-        >
-          Blog
-        </button>
+        </div>
       </div>
-      <nav className="-ml-4 flex text-[12px] md:ml-0 md:mr-0 md:w-auto md:items-center">
-        <ul className="my-auto mr-3 flex w-1/4 space-x-1 sm:space-x-4 sm:text-base sm:font-thin sm:tracking-wide">
+      <nav className="-ml-4 w-auto text-[12px] dark:text-[#f3f5f0] md:ml-0">
+        <ul className=" my-auto pl-2 md:pl-0 flex w-full space-x-2 sm:text-base sm:font-normal md:mr-0">
           <li
             id="About"
-            className="underline-offset-2 hover:cursor-pointer hover:text-[#71fead] hover:underline"
+            className=" underline-offset-2 hover:cursor-pointer hover:text-[#583249] hover:underline dark:hover:text-[#71fead]"
             onClick={(e) => handleClick(e)}
           >
             About
           </li>{" "}
           <span>|</span>
-          <div className="mx-1 flex w-auto items-center gap-2 break-normal sm:gap-2">
-            <li
-              id="Job History"
-              className="ml-1 w-auto underline-offset-2 hover:cursor-pointer hover:text-[#71fead] hover:underline"
-              onClick={(e) => handleClick(e)}
-            >
-              Job&nbsp;History
-            </li>
-            <span>|</span>
-          </div>
+          <li
+            id="Job History"
+            className="w-auto underline-offset-2 hover:cursor-pointer hover:text-[#583249] hover:underline dark:hover:text-[#71fead]"
+            onClick={(e) => handleClick(e)}
+          >
+            Job&nbsp;History
+          </li>
+          <span>|</span>
           <li
             id="Projects"
-            className="underline-offset-2  hover:cursor-pointer hover:text-[#71fead] hover:underline"
+            className="w-auto underline-offset-2 hover:cursor-pointer hover:text-[#583249] hover:underline dark:hover:text-[#71fead]"
             onClick={(e) => handleClick(e)}
           >
             Projects
           </li>
         </ul>
       </nav>
-      <div className="relative flex h-auto w-auto rounded-lg text-xl sm:px-1 md:mr-0 md:space-x-2">
-        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row md:space-x-2 md:text-2xl">
+      <div className="relative flex h-auto w-auto rounded-lg text-xl">
+        <div className="flex h-auto w-full flex-col rounded-lg text-xl sm:flex sm:flex-row md:text-2xl ">
           <Link href="https://www.instagram.com/johnathew_k/">
-            <AiOutlineInstagram className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
+            <AiOutlineInstagram className="transform rounded-lg text-[#583249] duration-500 hover:bg-orange-400 dark:text-[#71fead]" />
           </Link>
           <Link href="https://github.com/johnathew">
-            <FiGithub className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
+            <FiGithub className="transform rounded-lg text-[#583249] duration-500 hover:bg-orange-400 dark:text-[#71fead]" />
           </Link>
         </div>
-        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row  md:space-x-2 md:text-2xl">
+        <div className="flex h-auto w-auto flex-col rounded-lg text-xl sm:flex sm:flex-row md:text-2xl">
           <Link href="https://www.linkedin.com/in/john-kornegay-00541411b/">
-            <CiLinkedin className="transform rounded-lg text-[#71fead] duration-500 hover:bg-orange-400" />
+            <CiLinkedin className="transform rounded-lg text-[#583249] duration-500 hover:bg-orange-400 dark:text-[#71fead]" />
           </Link>
           {darkMode && (
             <IoIosSunny
               onClick={() => setDarkMode((prev) => !prev)}
-              className="transform rounded-lg text-[#71fead] duration-500 hover:cursor-pointer hover:bg-orange-400"
+              className="transform rounded-lg text-[#583249] duration-500 hover:cursor-pointer hover:bg-orange-400 dark:text-[#71fead]"
             />
           )}
           {!darkMode && (
             <BsSun
               onClick={() => setDarkMode((prev) => !prev)}
-              className="transform rounded-lg text-[#71fead] duration-500 hover:cursor-pointer hover:bg-orange-400"
+              className="transform rounded-lg text-[#583249] duration-500 hover:cursor-pointer hover:bg-orange-400 dark:text-[#71fead]"
             />
           )}
         </div>

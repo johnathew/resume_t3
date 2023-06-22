@@ -6,7 +6,7 @@
 body {
     height:100%;
     width: 100%;
-    @apply bg-slate-600 text-slate-50
+    @apply bg-slate-600 
     
 }
 
@@ -15,7 +15,7 @@ footer {
 }
 
 .dark {
-    @apply bg-slate-950 text-black;
+    @apply bg-[#00213d];
  }
 
  .carousel-control-next-icon {

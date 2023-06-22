@@ -10,8 +10,7 @@ import Projects from "~/components/Projects";
 
 export default function BootstrapCarousel() {
   const [index, setIndex] = useState(0);
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [pageView, setPageView] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
@@ -35,19 +34,19 @@ export default function BootstrapCarousel() {
   };
 
   return (
-    <>
+    <div className={`${
+      darkMode ? "dark" : ""
+    } bg-[#f1f4eb]`}>
       <Header
         darkMode={darkMode}
         setDarkMode={setDarkMode}
-        setPageView={setPageView}
-        pageView={pageView}
         handleClick={navLinks}
       />
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
         interval={null}
-        className="h-full w-full bg-[#00213d]"
+        className="h-full w-full"
       >
         <Carousel.Item
           className="h-screen overflow-scroll md:h-screen"
@@ -68,7 +67,6 @@ export default function BootstrapCarousel() {
           <Projects />
         </Carousel.Item>
       </Carousel>
-    </>
+    </div>
   );
 }
-
