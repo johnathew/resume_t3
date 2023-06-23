@@ -3,29 +3,29 @@ import React from "react";
 const JobHistory = () => {
   return (
     <section className="relative flex flex-col items-center text-gray-600">
-      <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
+      <h1 className="-mb-8 bg-gradient-to-r from-[#324958] to-[#583249] dark:from-[#71fead] dark:to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
         Job History
       </h1>
-      <div className="container flex flex-wrap">
-        <div className="relative flex pb-2 pt-10 sm:items-center md:w-2/3">
+      <div className="container flex flex-wrap ">
+        <div className="relative flex pb-2 pt-10 sm:items-center md:w-2/3 ">
           <div className="absolute -inset-2 mt-14 flex h-full w-6 items-center justify-center">
-            <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
+            <div className="pointer-events-none h-full w-1 bg-[#000000] rounded-sm dark:bg-slate-200"></div>
           </div>
-          <div className="relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full border-2 bg-[#71fead] text-sm font-medium text-white sm:mt-0"></div>
-          <ul className="list-none text-sm text-[#71fead]">
+          <div className="relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full border-[1px] border-[#000000] bg-[#ffffff] dark:border-[#fefefe] dark:bg-[#71fead] text-sm font-medium text-white sm:mt-0"></div>
+          <ul className="list-none text-sm dark:text-[#71fead]">
             <li className="-mx-8 w-screen">
               <div className="flex h-1/2 w-full items-center md:mx-11">
                 <h3 className="mx-2 text-base font-bold">
                   Helpdesk Specialist
                 </h3>
                 <span className="pt-2">
-                  <p className="text-slate-300">&nbsp; July 2021 - Present</p>
+                  <p className="text-[#000000] dark:text-slate-200">&nbsp; July 2021 - Present</p>
                 </span>
               </div>
               <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                 Maximus Federal - Remote; McAllen, TX
               </p>
-              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
+              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-[#000000] dark:text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
                 <li>
                   Troubleshoot official CDC software related issues for
                   healthcare professionals and the public.
@@ -49,21 +49,21 @@ const JobHistory = () => {
         </div>
         <div className="relative flex pb-2 sm:items-center md:w-2/3">
           <div className="absolute -inset-2 flex h-full w-6 items-center justify-center">
-            <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
+          <div className="pointer-events-none h-full w-1 bg-[#000000] dark:bg-slate-200"></div>
           </div>
-          <div className="title-font relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-sm font-medium text-white sm:mt-0"></div>
-          <ul className="list-none text-sm text-[#71fead]">
+          <div className="relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-[#000000] dark:bg-[#71fead] text-sm font-medium text-white sm:mt-0"></div>
+          <ul className="list-none text-sm dark:text-[#71fead]">
             <li className="-mx-8 w-screen">
               <div className="flex h-1/2 w-full items-center md:mx-11">
                 <h3 className="mx-2 text-base font-bold">Teaching Assistant</h3>
                 <span className="pt-2">
-                  <p className="text-slate-300">&nbsp; &nbsp;Spring 2021</p>
+                <p className="text-[#000000] dark:text-slate-200">&nbsp; &nbsp;Spring 2021</p>
                 </span>
               </div>
               <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                 University of Texas Rio Grande Valley - Remote; Edinburg, TX
               </p>
-              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
+              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-[#000000] dark:text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
                 <li>
                   Assisted undergraduate Chemistry students with course
                   material, holding weekly Q&A sessions
@@ -78,16 +78,16 @@ const JobHistory = () => {
         </div>
         <div className="relative flex pb-2 sm:items-center md:w-2/3">
           <div className="absolute -inset-2 flex h-full w-6 items-center justify-center">
-            <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
+          <div className="pointer-events-none h-full w-1 bg-[#000000] dark:bg-slate-200"></div>
           </div>
-          <div className="title-font relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-sm font-medium text-white sm:mt-0"></div>
-          <ul className="list-none text-sm text-[#71fead]">
+          <div className="relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-[#000000] dark:bg-[#71fead] text-sm font-medium text-white sm:mt-0"></div>
+          <ul className="list-none text-sm dark:text-[#71fead]">
             <li className="-mx-8 w-screen">
               <div className="flex h-1/2 w-full items-center md:mx-11">
                 <h3 className="mx-2 text-base font-bold">Survey Assistant</h3>
                 &nbsp;
                 <span className="pt-2">
-                  <p className="text-slate-300">
+                <p className="text-[#000000] dark:text-slate-200">
                     &nbsp;October 2021 - December 2021
                   </p>
                 </span>
@@ -95,7 +95,7 @@ const JobHistory = () => {
               <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                 SAMES, Inc. - McAllen, TX
               </p>
-              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
+              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-[#000000] dark:text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
                 <li>
                   Mapped out boundaries for businesses and residential homes
                   using GPS technology
@@ -114,10 +114,10 @@ const JobHistory = () => {
         </div>
         <div className="relative flex  sm:items-center md:w-2/3">
           <div className="absolute -inset-2 flex h-full w-6 items-center justify-center">
-            <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
+          <div className="pointer-events-none h-full w-1 bg-[#000000] rounded-sm dark:bg-slate-200"></div>
           </div>
-          <div className="title-font relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-green-500 text-sm font-medium text-white sm:mt-0"></div>
-          <ul className="list-none text-sm text-[#71fead]">
+          <div className="relative z-10 mt-10 inline-flex h-2 w-2 flex-shrink-0 items-center justify-center rounded-full bg-[#000000] dark:bg-[#71fead] text-sm font-medium text-white sm:mt-0"></div>
+          <ul className="list-none text-sm dark:text-[#71fead]">
             <li className="-mx-8 w-screen">
               <div className="flex h-1/2 w-full items-center md:mx-11">
                 <h3 className="mx-2 text-base font-bold">
@@ -125,7 +125,7 @@ const JobHistory = () => {
                 </h3>
                 &nbsp;
                 <span className="pt-2">
-                  <p className="text-slate-300">
+                <p className="text-[#000000] dark:text-slate-200">
                     &nbsp;October 2016 - May 2020
                   </p>
                 </span>
@@ -133,7 +133,7 @@ const JobHistory = () => {
               <p className="mx-2 -mt-3 flex justify-between font-light italic md:pl-11">
                 Walgreens Pharmacy- Palmview, TX
               </p>
-              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-6 text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
+              <ul className="-mx-4 w-full list-outside list-disc space-y-2 pb-2 text-[#000000] dark:text-slate-200 md:mx-7 md:w-3/4 md:space-y-0.5 md:text-base">
                 <li>
                   Utilized propriety software to manage patient’s prescriptions,
                   resolve rejected insurance claims, and scheduled refills for

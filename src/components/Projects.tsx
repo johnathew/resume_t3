@@ -5,7 +5,7 @@ import Link from "next/link";
 const Projects = () => {
   return (
     <section className="relative flex flex-col items-center">
-      <h1 className="-mb-8 bg-gradient-to-r from-[#71fead] to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
+      <h1 className="-mb-8 bg-gradient-to-r from-[#324958] to-[#583249] dark:from-[#71fead] dark:to-[#437e60] bg-clip-text pt-20 font-bold text-transparent">
         Projects
       </h1>
       <div className="mb-10 mt-14 flex w-full flex-col justify-center gap-2 rounded-lg px-4 md:mb-0 md:mt-10 md:grid md:h-full md:w-2/3 md:flex-none md:grid-cols-2 md:gap-2 md:pt-5">

@@ -30,7 +30,7 @@ const About = () => {
               </h2>
             </div>
           </div>
-          <p className="text-md font-normal tracking-wide">
+          <p className="md:text-lg -mt-2 text-md font-normal tracking-wide">
             A self-taught and highly motivated individual seeking an internship
             opportunity to gain experience as a front-end developer.
           </p>
@@ -50,8 +50,8 @@ const About = () => {
         </div>
       </section>
       <div className="flex w-full flex-col pb-4 mt-2 md:mx-auto md:w-2/3 md:items-center md:pt-10">
-        <div className="flex text-sm w-full flex-col justify-center px-2 md:items-start">
-          <p className="border-y-4 border-y-black dark:border-y-[#71fead] p-3 text-base font-light leading-relaxed dark:text-white md:text-lg">
+        <div className="flex text-sm w-full flex-col justify-center px-2 md:items-center">
+          <p className="border-y-4 border-y-[#583249] dark:border-y-[#71fead] p-8 text-base font-light leading-relaxed dark:text-white md:text-lg lg:text-xl">
             <span className="font-serif font-bold">
               A 2016 graduate from Texas A&M University
             </span>{" "}

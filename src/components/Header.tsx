@@ -15,7 +15,7 @@ type HeaderTypes = {
 
 const Header = ({ darkMode, setDarkMode, handleClick }: HeaderTypes) => {
   return (
-    <header className="md:text-md absolute  z-50 flex h-fit w-screen items-center justify-around border-b-[1px] border-black bg-[#f1f4eb] p-2 drop-shadow-2xl dark:bg-[#00213d] sm:justify-evenly md:w-full">
+    <header className="md:text-md absolute  z-50 flex h-fit w-screen items-center justify-around border-b-[1px] border-black bg-[#f1f4eb] p-2 drop-shadow-md dark:bg-[#00213d] sm:justify-evenly md:w-full">
       <div className="flex items-center gap-1 sm:space-x-1 md:justify-center md:space-x-1 pr-3">
         <div className="md:align-center h-auto rounded-lg border-2 border-slate-700 bg-[#324958] px-3 py-1 text-sm text-[#f3f5f0] shadow-lg dark:bg-[#71fead] dark:text-black md:text-lg">
           Resume
